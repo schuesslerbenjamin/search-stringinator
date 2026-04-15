@@ -40,10 +40,11 @@ function generateLinks() {
             html += `<a href="${scopusUrl}" target="_blank">Search in Scopus</a>`;
         } 
         else if (pub.database === "ebscohost") {
-            const ebscoQuery = `(TI ${searchString} OR AB ${searchString} OR KW ${searchString}) AND IS ${pub.ISSN}`;
+            // EBSCO Syntax: Added inner parentheses to group the search string safely
+            const ebscoQuery = `(TI (${searchString}) OR AB (${searchString}) OR KW (${searchString})) AND IS ${pub.ISSN}`;
             const ebscoUrl = `https://search.ebscohost.com/login.aspx?direct=true&bquery=${encodeURIComponent(ebscoQuery)}`;
             html += `<a href="${ebscoUrl}" target="_blank">Search in EBSCOhost</a>`;
-        } 
+        }
         else if (pub.database === "proquest") {
             const proquestQuery = `noft(${searchString}) AND issn(${pub.ISSN})`;
             const proquestUrl = `https://www.proquest.com/search/advanced?query=${encodeURIComponent(proquestQuery)}`;
