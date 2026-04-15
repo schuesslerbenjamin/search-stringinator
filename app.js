@@ -6,6 +6,16 @@ fetch('publications.json')
     .then(data => { publicationsData = data; })
     .catch(error => console.error('Error loading publication data:', error));
 
+function copyToClipboard(text, btn) {
+    navigator.clipboard.writeText(text).then(() => {
+        const originalText = btn.innerText;
+        btn.innerText = "✅ Copied!";
+        setTimeout(() => { btn.innerText = originalText; }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+}
+
 function generateLinks() {
     const searchString = document.getElementById('searchString').value.trim();
     
@@ -46,9 +56,24 @@ function generateLinks() {
             html += `<a href="${ebscoUrl}" target="_blank">Search in EBSCOhost</a>`;
         }
         else if (pub.database === "proquest") {
+            // ProQuest Syntax
             const proquestQuery = `noft(${searchString}) AND issn(${pub.ISSN})`;
-            const proquestUrl = `https://www.proquest.com/search/advanced?query=${encodeURIComponent(proquestQuery)}`;
-            html += `<a href="${proquestUrl}" target="_blank">Search in ProQuest</a>`;
+            const proquestUrl = `https://www.proquest.com/search/advanced`;
+            
+            // Encode the query safely so it doesn't break the HTML onclick attribute
+            const safeQuery = encodeURIComponent(proquestQuery);
+
+            // Create a styled fallback box with the code and a copy button
+            html += `
+                <div style="background-color: #e9ecef; padding: 0.75rem; border-radius: 4px; margin-bottom: 0.5rem; border: 1px solid #ced4da;">
+                    <div style="font-size: 0.85rem; color: #495057; margin-bottom: 0.5rem;">
+                        <strong>ProQuest</strong> (Manual entry required):
+                    </div>
+                    <code style="display: block; margin-bottom: 0.5rem; word-break: break-word; color: #d63384; background: #fff; padding: 0.25rem; border-radius: 3px; border: 1px solid #dee2e6;">${proquestQuery}</code>
+                    <button onclick="copyToClipboard(decodeURIComponent('${safeQuery}'), this)" style="font-size: 0.85rem; padding: 0.25rem 0.5rem;">📋 Copy String</button>
+                    <a href="${proquestUrl}" target="_blank" style="display: inline-block; margin-left: 10px; font-size: 0.85rem;">Open ProQuest Advanced Search</a>
+                </div>
+            `;
         }
         else if (pub.database === "acm") {
             // ACM Syntax: PubIdSortField:(ISSN) AND (Title:(search) OR Abstract:(search) OR Keyword:(search))
