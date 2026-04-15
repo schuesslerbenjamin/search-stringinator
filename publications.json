@@ -1,0 +1,226 @@
+[
+  {
+    "name": "ACM SIGMIS Database: The DATA BASE for Advances in Information Systems",
+    "database": "acm",
+    "ISSN": "0095-0033",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "ACM Transactions on Management Information Systems",
+    "database": "acm",
+    "ISSN": "2158-656x",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "Information Systems Frontiers",
+    "database": "acm",
+    "ISSN": "1387-3326",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "ACM Transactions on Information Systems",
+    "database": "ebscohost",
+    "ISSN": "1046-8188",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "Behaviour & Information Technology",
+    "database": "ebscohost",
+    "ISSN": "0144-929X",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "Communications of the Association for Information Systems",
+    "database": "ebscohost",
+    "ISSN": "1529-3181",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "Decision Support Systems",
+    "database": "ebscohost",
+    "ISSN": "0167-9236",
+    "isISSeniorScholarBasket": true,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "European Journal of Information Systems",
+    "database": "ebscohost",
+    "ISSN": "0960-085X",
+    "isISSeniorScholarBasket": true,
+    "VHB-2024-WI-rank": "A"
+  },
+  {
+    "name": "Group Decision and Negotiation",
+    "database": "ebscohost",
+    "ISSN": "0926-2644",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "Information Systems Journal",
+    "database": "ebscohost",
+    "ISSN": "1350-1917",
+    "isISSeniorScholarBasket": true,
+    "VHB-2024-WI-rank": "A"
+  },
+  {
+    "name": "Information Systems Research",
+    "database": "ebscohost",
+    "ISSN": "1047-7047",
+    "isISSeniorScholarBasket": true,
+    "VHB-2024-WI-rank": "A+"
+  },
+  {
+    "name": "Information Technology & People",
+    "database": "ebscohost",
+    "ISSN": "0959-3845",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "International Journal of Electronic Commerce",
+    "database": "ebscohost",
+    "ISSN": "1086-4415",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "International Journal of Information Management",
+    "database": "ebscohost",
+    "ISSN": "0268-4012",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "Internet Research",
+    "database": "ebscohost",
+    "ISSN": "1066-2243",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "Journal of Decision Systems",
+    "database": "ebscohost",
+    "ISSN": "1246-0125",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "Journal of Management Information Systems",
+    "database": "ebscohost",
+    "ISSN": "0742-1222",
+    "isISSeniorScholarBasket": true,
+    "VHB-2024-WI-rank": "A"
+  },
+  {
+    "name": "Journal of the Association for Information Systems",
+    "database": "ebscohost",
+    "ISSN": "1536-9323",
+    "isISSeniorScholarBasket": true,
+    "VHB-2024-WI-rank": "A"
+  },
+  {
+    "name": "MIS Quarterly",
+    "database": "ebscohost",
+    "ISSN": "02767783",
+    "isISSeniorScholarBasket": true,
+    "VHB-2024-WI-rank": "A+"
+  },
+  {
+    "name": "MIS Quarterly Executive",
+    "database": "ebscohost",
+    "ISSN": "1540-1960",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "Software and Systems Modeling",
+    "database": "ebscohost",
+    "ISSN": "1619-1374",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "The Journal of Strategic Information Systems",
+    "database": "ebscohost",
+    "ISSN": "0963-8687",
+    "isISSeniorScholarBasket": true,
+    "VHB-2024-WI-rank": "A"
+  },
+  {
+    "name": "AIS Transactions on Human-Computer Interaction",
+    "database": "proquest",
+    "ISSN": "1944-3900",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "Business & Information Systems Engineering",
+    "database": "proquest",
+    "ISSN": "1867-0202",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "Electronic Markets : EM",
+    "database": "proquest",
+    "ISSN": "10196781",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "Information & Management",
+    "database": "proquest",
+    "ISSN": "1872-7530",
+    "isISSeniorScholarBasket": true,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "Information and Organization",
+    "database": "proquest",
+    "ISSN": "14717727",
+    "isISSeniorScholarBasket": true,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "Information Systems Management",
+    "database": "proquest",
+    "ISSN": "10580530",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "Information Technology and Management",
+    "database": "proquest",
+    "ISSN": "1385951X",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "Journal of Information Technology",
+    "database": "proquest",
+    "ISSN": "1466-4437",
+    "isISSeniorScholarBasket": true,
+    "VHB-2024-WI-rank": "A"
+  },
+  {
+    "name": "Scandinavian Journal of Information Systems",
+    "database": "proquest",
+    "ISSN": "09050167",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "Information Systems",
+    "database": "scopus",
+    "ISSN": "0306-4379",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B"
+  }
+]
