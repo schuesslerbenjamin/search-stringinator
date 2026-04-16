@@ -45,10 +45,10 @@ function generateLinks() {
         let html = `<div class="journal-section"><h4>${pub.name}</h4>`;
         
         if (pub.database === "scopus") {
-            const scopusQuery = `TITLE-ABS-KEY(${searchString}) AND ISSN(${pub.ISSN})`;
+            const scopusQuery = `(ISSN(${pub.ISSN}) AND TITLE-ABS-KEY(${searchString}))`;
             const scopusUrl = `https://www.scopus.com/results/results.uri?s=${encodeURIComponent(scopusQuery)}`;
             html += `<a href="${scopusUrl}" target="_blank">Search in Scopus</a>`;
-        } 
+        }
         else if (pub.database === "ebscohost") {
             // EBSCO Syntax: Added inner parentheses to group the search string safely
             const ebscoQuery = `(TI (${searchString}) OR AB (${searchString}) OR KW (${searchString})) AND IS ${pub.ISSN}`;
