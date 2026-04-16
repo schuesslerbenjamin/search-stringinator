@@ -31,61 +31,94 @@ function generateLinks() {
     // 1. Filter the publications 
     let filteredPubs = publicationsData.filter(pub => {
         let keep = true;
-        
         if (filterBasket && !pub.isISSeniorScholarBasket) keep = false;
         if (filterVhbA && pub['VHB-2024-WI-rank'] !== "A") keep = false;
-
         return keep;
     });
 
-    resultsContainer.innerHTML = `<h3>Generated Links (${filteredPubs.length} Publications)</h3>`;
+    if (filteredPubs.length === 0) {
+        resultsContainer.innerHTML = `<h3>No publications match your filters.</h3>`;
+        return;
+    }
 
-    // 2. Generate exactly one URL per publication based on its assigned database
-    filteredPubs.forEach(pub => {
-        let html = `<div class="journal-section"><h4>${pub.name}</h4>`;
+    // 2. Group the filtered publications by database
+    const groupedPubs = filteredPubs.reduce((acc, pub) => {
+        const db = pub.database;
+        // Ignore publications with no valid database assigned
+        if (db && ["scopus", "ebscohost", "proquest", "acm"].includes(db)) {
+            if (!acc[db]) acc[db] = [];
+            acc[db].push(pub);
+        }
+        return acc;
+    }, {});
+
+    // 3. Render the UI
+    resultsContainer.innerHTML = `<h3>Generated Search Strings (${filteredPubs.length} Publications)</h3>`;
+
+    // Iterate over each database bucket
+    for (const [db, pubs] of Object.entries(groupedPubs)) {
         
-        if (pub.database === "scopus") {
-            const scopusQuery = `(ISSN(${pub.ISSN}) AND TITLE-ABS-KEY(${searchString}))`;
-            const scopusUrl = `https://www.scopus.com/results/results.uri?s=${encodeURIComponent(scopusQuery)}`;
-            html += `<a href="${scopusUrl}" target="_blank">Search in Scopus</a>`;
-        }
-        else if (pub.database === "ebscohost") {
-            // EBSCO Syntax: Added inner parentheses to group the search string safely
-            const ebscoQuery = `(TI (${searchString}) OR AB (${searchString}) OR KW (${searchString})) AND IS ${pub.ISSN}`;
-            const ebscoUrl = `https://search.ebscohost.com/login.aspx?direct=true&bquery=${encodeURIComponent(ebscoQuery)}`;
-            html += `<a href="${ebscoUrl}" target="_blank">Search in EBSCOhost</a>`;
-        }
-        else if (pub.database === "proquest") {
-            // ProQuest Syntax
-            const proquestQuery = `noft(${searchString}) AND issn(${pub.ISSN})`;
-            const proquestUrl = `https://www.proquest.com/search/advanced`;
-            
-            // Encode the query safely so it doesn't break the HTML onclick attribute
-            const safeQuery = encodeURIComponent(proquestQuery);
+        let dbName = "";
+        let query = "";
+        let url = "";
 
-            // Create a styled fallback box with the code and a copy button
-            html += `
-                <div style="background-color: #e9ecef; padding: 0.75rem; border-radius: 4px; margin-bottom: 0.5rem; border: 1px solid #ced4da;">
-                    <div style="font-size: 0.85rem; color: #495057; margin-bottom: 0.5rem;">
-                        <strong>ProQuest</strong> (Manual entry required):
-                    </div>
-                    <code style="display: block; margin-bottom: 0.5rem; word-break: break-word; color: #d63384; background: #fff; padding: 0.25rem; border-radius: 3px; border: 1px solid #dee2e6;">${proquestQuery}</code>
-                    <button onclick="copyToClipboard(decodeURIComponent('${safeQuery}'), this)" style="font-size: 0.85rem; padding: 0.25rem 0.5rem;">📋 Copy String</button>
-                    <a href="${proquestUrl}" target="_blank" style="display: inline-block; margin-left: 10px; font-size: 0.85rem;">Open ProQuest Advanced Search</a>
+        // Build the specific query string for each database
+        if (db === "scopus") {
+            dbName = "Scopus";
+            const issnString = pubs.map(p => `ISSN(${p.ISSN})`).join(' OR ');
+            query = `((${issnString}) AND TITLE-ABS-KEY(${searchString}))`;
+            url = `https://www.scopus.com/results/results.uri?s=${encodeURIComponent(query)}`;
+        } 
+        else if (db === "ebscohost") {
+            dbName = "EBSCOhost";
+            const issnString = pubs.map(p => `IS ${p.ISSN}`).join(' OR ');
+            query = `((${issnString}) AND (TI (${searchString}) OR AB (${searchString}) OR KW (${searchString})))`;
+            url = `https://search.ebscohost.com/login.aspx?direct=true&bquery=${encodeURIComponent(query)}`;
+        } 
+        else if (db === "proquest") {
+            dbName = "ProQuest";
+            const issnString = pubs.map(p => `issn(${p.ISSN})`).join(' OR ');
+            query = `noft(${searchString}) AND (${issnString})`;
+            // ProQuest doesn't support complex URLs, point to Advanced Search
+            url = `https://www.proquest.com/search/advanced`;
+        } 
+        else if (db === "acm") {
+            dbName = "ACM Digital Library";
+            const issnString = pubs.map(p => `PubIdSortField:(${p.ISSN})`).join(' OR ');
+            query = `((${issnString}) AND (Title:(${searchString}) OR Abstract:(${searchString}) OR Keyword:(${searchString})))`;
+            url = `https://dl.acm.org/action/doSearch?fillQuickSearch=false&target=advanced&expand=dl&AllField=${encodeURIComponent(query)}`;
+        }
+
+        const safeQuery = encodeURIComponent(query);
+        const journalListHtml = pubs.map(p => `<li style="margin-bottom: 0.25rem;">${p.name} (ISSN: ${p.ISSN})</li>`).join('');
+
+        // Generate the HTML block for this database
+        let html = `
+            <div class="journal-section" style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 6px;">
+                <h4 style="margin-top: 0; font-size: 1.25rem; color: #343a40; border-bottom: 2px solid #0056b3; padding-bottom: 0.5rem;">${dbName}</h4>
+                
+                <div style="margin-bottom: 1rem;">
+                    <strong style="color: #495057;">Included Publications (${pubs.length}):</strong>
+                    <ul style="font-size: 0.9rem; color: #495057; margin-top: 0.5rem; padding-left: 1.5rem;">
+                        ${journalListHtml}
+                    </ul>
                 </div>
-            `;
-        }
-        else if (pub.database === "acm") {
-            // ACM Syntax: PubIdSortField:(ISSN) AND (Title:(search) OR Abstract:(search) OR Keyword:(search))
-            const acmQuery = `PubIdSortField:(${pub.ISSN}) AND (Title:(${searchString}) OR Abstract:(${searchString}) OR Keyword:(${searchString}))`;
-            const acmUrl = `https://dl.acm.org/action/doSearch?fillQuickSearch=false&target=advanced&expand=dl&AllField=${encodeURIComponent(acmQuery)}`;
-            html += `<a href="${acmUrl}" target="_blank">Search in ACM Digital Library</a>`;
-        }
-        else {
-            html += `<em>No valid database assigned.</em>`;
-        }
 
-        html += `</div>`;
+                <div style="background-color: #fff; padding: 1rem; border-radius: 4px; border: 1px solid #ced4da;">
+                    <div style="font-size: 0.85rem; color: #6c757d; margin-bottom: 0.5rem; text-transform: uppercase; font-weight: bold;">
+                        Search String
+                    </div>
+                    <code style="display: block; margin-bottom: 1rem; word-break: break-word; color: #d63384; background: #f8f9fa; padding: 0.75rem; border-radius: 4px; border: 1px solid #e9ecef; font-size: 0.9rem;">${query}</code>
+                    
+                    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                        <button onclick="copyToClipboard(decodeURIComponent('${safeQuery}'), this)" style="padding: 0.5rem 1rem; background: #28a745; color: white; border: none; cursor: pointer; border-radius: 4px; font-weight: bold; transition: 0.2s;">📋 Copy String</button>
+                        <a href="${url}" target="_blank" style="padding: 0.5rem 1rem; background: #0056b3; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; transition: 0.2s;">↗️ Open in ${dbName}</a>
+                    </div>
+                    ${db === 'proquest' ? `<div style="font-size: 0.8rem; color: #dc3545; margin-top: 0.75rem;"><em>Note: ProQuest requires you to manually copy and paste the string into their Advanced Search page.</em></div>` : ''}
+                </div>
+            </div>
+        `;
+        
         resultsContainer.innerHTML += html;
-    });
+    }
 }
