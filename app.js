@@ -19,8 +19,12 @@ function copyToClipboard(text, btn) {
 function generateLinks() {
     const searchString = document.getElementById('searchString').value.trim();
     
-    const filterBasket = document.getElementById('basketOf8').checked;
-    const filterVhbA = document.getElementById('vhbA').checked;
+    // 1. Get the state of all filters
+    const filterAISSeniorScholarPremierJournals = document.getElementById('AISSeniorScholarPremierJournals')?.checked || false;
+    const filter_Vhb_2024_WI_APlus = document.getElementById('vhb-2024-WI-A+')?.checked || false;
+    const filter_Vhb_2024_WI_A = document.getElementById('vhb-2024-WI-A')?.checked || false;
+    const filter_Vhb_2024_WI_B = document.getElementById('vhb-2024-WI-B')?.checked || false;
+    
     const resultsContainer = document.getElementById('results');
 
     if (!searchString) {
@@ -28,69 +32,120 @@ function generateLinks() {
         return;
     }
 
-    // 1. Filter the publications 
-    let filteredPubs = publicationsData.filter(pub => {
-        let keep = true;
-        if (filterBasket && !pub.isISSeniorScholarBasket) keep = false;
-        if (filterVhbA && pub['VHB-2024-WI-rank'] !== "A") keep = false;
-        return keep;
-    });
+    const noFiltersSelected = !filterAISSeniorScholarPremierJournals && 
+                              !filter_Vhb_2024_WI_APlus && 
+                              !filter_Vhb_2024_WI_A && 
+                              !filter_Vhb_2024_WI_B;
 
-    if (filteredPubs.length === 0) {
-        resultsContainer.innerHTML = `<h3>No publications match your filters.</h3>`;
-        return;
+    let dbsToRender = [];
+
+    if (noFiltersSelected) {
+        // If no filters are selected, prepare an array of the 4 databases with empty publication arrays
+        dbsToRender = [
+            { db: "scopus", pubs: [] },
+            { db: "ebscohost", pubs: [] },
+            { db: "proquest", pubs: [] },
+            { db: "acm", pubs: [] }
+        ];
+        resultsContainer.innerHTML = `<h3>Generated Search Strings (All Publications - No Filters Applied)</h3>`;
+    } else {
+        // 2. Filter using "OR" logic (include if it matches ANY checked filter)
+        let filteredPubs = publicationsData.filter(pub => {
+            if (filterAISSeniorScholarPremierJournals && pub.isISSeniorScholarBasket) return true;
+            if (filter_Vhb_2024_WI_APlus && pub['VHB-2024-WI-rank'] === "A+") return true;
+            if (filter_Vhb_2024_WI_A && pub['VHB-2024-WI-rank'] === "A") return true;
+            if (filter_Vhb_2024_WI_B && pub['VHB-2024-WI-rank'] === "B") return true;
+            return false; // Drop it if it didn't match any selected filter
+        });
+
+        if (filteredPubs.length === 0) {
+            resultsContainer.innerHTML = `<h3>No publications match your selected filters.</h3>`;
+            return;
+        }
+
+        // Group the filtered publications by database
+        const groupedPubs = filteredPubs.reduce((acc, pub) => {
+            const db = pub.database;
+            if (db && ["scopus", "ebscohost", "proquest", "acm"].includes(db)) {
+                if (!acc[db]) acc[db] = [];
+                acc[db].push(pub);
+            }
+            return acc;
+        }, {});
+
+        // Convert the object back into an array for our rendering pipeline
+        dbsToRender = Object.entries(groupedPubs).map(([db, pubs]) => ({ db, pubs }));
+        resultsContainer.innerHTML = `<h3>Generated Search Strings (${filteredPubs.length} Publications)</h3>`;
     }
 
-    // 2. Group the filtered publications by database
-    const groupedPubs = filteredPubs.reduce((acc, pub) => {
-        const db = pub.database;
-        // Ignore publications with no valid database assigned
-        if (db && ["scopus", "ebscohost", "proquest", "acm"].includes(db)) {
-            if (!acc[db]) acc[db] = [];
-            acc[db].push(pub);
-        }
-        return acc;
-    }, {});
-
-    // 3. Render the UI
-    resultsContainer.innerHTML = `<h3>Generated Search Strings (${filteredPubs.length} Publications)</h3>`;
-
-    // Iterate over each database bucket
-    for (const [db, pubs] of Object.entries(groupedPubs)) {
-        
+    // 3. Unifed Rendering Loop
+    dbsToRender.forEach(({ db, pubs }) => {
         let dbName = "";
         let query = "";
         let url = "";
+        
+        // A boolean flag to determine if we are injecting ISSNs
+        const hasPubs = pubs.length > 0;
 
         // Build the specific query string for each database
         if (db === "scopus") {
             dbName = "Scopus";
-            const issnString = pubs.map(p => `ISSN(${p.ISSN})`).join(' OR ');
-            query = `((${issnString}) AND TITLE-ABS-KEY(${searchString}))`;
+            if (hasPubs) {
+                const issnString = pubs.map(p => `ISSN(${p.ISSN})`).join(' OR ');
+                query = `((${issnString}) AND TITLE-ABS-KEY(${searchString}))`;
+            } else {
+                query = `TITLE-ABS-KEY(${searchString})`;
+            }
             url = `https://www.scopus.com/results/results.uri?s=${encodeURIComponent(query)}`;
         } 
         else if (db === "ebscohost") {
             dbName = "EBSCOhost";
-            const issnString = pubs.map(p => `IS ${p.ISSN}`).join(' OR ');
-            query = `((${issnString}) AND (TI (${searchString}) OR AB (${searchString}) OR KW (${searchString})))`;
+            if (hasPubs) {
+                const issnString = pubs.map(p => `IS ${p.ISSN}`).join(' OR ');
+                query = `((${issnString}) AND (TI (${searchString}) OR AB (${searchString}) OR KW (${searchString})))`;
+            } else {
+                query = `(TI (${searchString}) OR AB (${searchString}) OR KW (${searchString}))`;
+            }
             url = `https://search.ebscohost.com/login.aspx?direct=true&bquery=${encodeURIComponent(query)}`;
         } 
         else if (db === "proquest") {
             dbName = "ProQuest";
-            const issnString = pubs.map(p => `issn(${p.ISSN})`).join(' OR ');
-            query = `noft(${searchString}) AND (${issnString})`;
-            // ProQuest doesn't support complex URLs, point to Advanced Search
+            if (hasPubs) {
+                const issnString = pubs.map(p => `issn(${p.ISSN})`).join(' OR ');
+                query = `noft(${searchString}) AND (${issnString})`;
+            } else {
+                query = `noft(${searchString})`;
+            }
             url = `https://www.proquest.com/search/advanced`;
         } 
         else if (db === "acm") {
             dbName = "ACM Digital Library";
-            const issnString = pubs.map(p => `PubIdSortField:(${p.ISSN})`).join(' OR ');
-            query = `((${issnString}) AND (Title:(${searchString}) OR Abstract:(${searchString}) OR Keyword:(${searchString})))`;
+            if (hasPubs) {
+                const issnString = pubs.map(p => `PubIdSortField:(${p.ISSN})`).join(' OR ');
+                query = `((${issnString}) AND (Title:(${searchString}) OR Abstract:(${searchString}) OR Keyword:(${searchString})))`;
+            } else {
+                query = `(Title:(${searchString}) OR Abstract:(${searchString}) OR Keyword:(${searchString}))`;
+            }
             url = `https://dl.acm.org/action/doSearch?fillQuickSearch=false&target=advanced&expand=dl&AllField=${encodeURIComponent(query)}`;
         }
 
         const safeQuery = encodeURIComponent(query);
-        const journalListHtml = pubs.map(p => `<li style="margin-bottom: 0.25rem;">${p.name} (ISSN: ${p.ISSN})</li>`).join('');
+        
+        // Dynamically build the header area depending on whether filters were applied
+        let publicationsInfoHtml = "";
+        if (hasPubs) {
+            const journalListHtml = pubs.map(p => `<li style="margin-bottom: 0.25rem;">${p.name} (ISSN: ${p.ISSN})</li>`).join('');
+            publicationsInfoHtml = `
+                <strong style="color: #495057;">Included Publications (${pubs.length}):</strong>
+                <ul style="font-size: 0.9rem; color: #495057; margin-top: 0.5rem; padding-left: 1.5rem;">
+                    ${journalListHtml}
+                </ul>
+            `;
+        } else {
+            publicationsInfoHtml = `
+                <strong style="color: #0056b3;">Searching globally in database (No journal filters applied).</strong>
+            `;
+        }
 
         // Generate the HTML block for this database
         let html = `
@@ -98,10 +153,7 @@ function generateLinks() {
                 <h4 style="margin-top: 0; font-size: 1.25rem; color: #343a40; border-bottom: 2px solid #0056b3; padding-bottom: 0.5rem;">${dbName}</h4>
                 
                 <div style="margin-bottom: 1rem;">
-                    <strong style="color: #495057;">Included Publications (${pubs.length}):</strong>
-                    <ul style="font-size: 0.9rem; color: #495057; margin-top: 0.5rem; padding-left: 1.5rem;">
-                        ${journalListHtml}
-                    </ul>
+                    ${publicationsInfoHtml}
                 </div>
 
                 <div style="background-color: #fff; padding: 1rem; border-radius: 4px; border: 1px solid #ced4da;">
@@ -120,5 +172,5 @@ function generateLinks() {
         `;
         
         resultsContainer.innerHTML += html;
-    }
+    });
 }
