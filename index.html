@@ -6,24 +6,155 @@
     <title>Search-Stringinator</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <style>
-        body { font-family: system-ui, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
-        .form-group { margin-bottom: 1.5rem; }
-        textarea { width: 100%; height: 100px; padding: 0.5rem; }
-        .filters { display: flex; gap: 1rem; margin-top: 0.5rem; }
-        button { padding: 0.5rem 1rem; background: #0056b3; color: white; border: none; cursor: pointer; border-radius: 4px; }
-        button:hover { background: #004494; }
-        .result-box { margin-top: 2rem; padding: 1rem; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px; }
-        .journal-section { margin-bottom: 1.5rem; border-bottom: 1px solid #ccc; padding-bottom: 1rem; }
-        a { color: #0056b3; text-decoration: none; display: block; margin-bottom: 0.25rem; }
-        a:hover { text-decoration: underline; }
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --card-bg: #ffffff;
+            --radius: 8px;
+        }
+
+        body { 
+            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+            max-width: 800px; 
+            margin: 3rem auto; 
+            padding: 0 1.5rem; 
+            line-height: 1.6; 
+            color: var(--text-main);
+            background-color: var(--bg);
+        }
+
+        /* Modern Header with inline SVG */
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .header-container img {
+            width: 48px;
+            height: 48px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.025em;
+        }
+
+        /* Container styling for inputs */
+        .form-group { 
+            margin-bottom: 1.5rem; 
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+
+        label strong {
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
+        textarea { 
+            width: 100%; 
+            height: 100px; 
+            padding: 0.75rem; 
+            margin-top: 0.75rem;
+            border: 1px solid var(--border); 
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            resize: vertical;
+            box-sizing: border-box;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .filters { 
+            display: flex; 
+            flex-direction: column;
+            gap: 0.75rem; 
+            margin-top: 1rem; 
+        }
+
+        .filters label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .filters input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Modernized Primary Button */
+        button.primary-btn { 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem 1.5rem; 
+            background-color: var(--primary); 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            border-radius: 6px; 
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.2s, transform 0.1s;
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        button.primary-btn:hover { 
+            background-color: var(--primary-hover); 
+        }
+        
+        button.primary-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Results Area - Box styling removed */
+        #results { 
+            margin-top: 3rem; 
+        }
+
+        #results em {
+            color: var(--text-muted);
+            font-style: normal;
+        }
+
     </style>
 </head>
 <body>
 
-    <h1>Search-Stringinator</h1>
+    <div class="header-container">
+        <img src="/favicon.svg" alt="Search-Stringinator Logo">
+        <h1>Search-Stringinator</h1>
+    </div>
     
     <div class="form-group">
-        <label for="searchString"><strong>Base Boolean Search String:</strong></label><br>
+        <label for="searchString"><strong>Base Boolean Search String:</strong></label>
         <textarea id="searchString" placeholder='e.g., ("artificial intelligence" OR "AI") AND "adoption"'></textarea>
     </div>
 
@@ -35,9 +166,9 @@
         </div>
     </div>
 
-    <button onclick="generateLinks()">Generate Search Links</button>
+    <button class="primary-btn" onclick="generateLinks()">Generate Search Links</button>
 
-    <div id="results" class="result-box">
+    <div id="results">
         <em>Generated links will appear here...</em>
     </div>
 
