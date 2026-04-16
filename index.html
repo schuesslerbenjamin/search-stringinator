@@ -144,6 +144,32 @@
             font-style: normal;
         }
 
+        /* Dynamic Card Buttons */
+        .card-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            color: white;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .card-btn:active {
+            transform: scale(0.98); /* This creates the tactile click animation */
+        }
+
+        .btn-green { background-color: #28a745; }
+        .btn-green:hover { background-color: #218838; }
+
+        .btn-blue { background-color: #0056b3; }
+        .btn-blue:hover { background-color: #004494; }
+
     </style>
 </head>
 <body>

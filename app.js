@@ -19,7 +19,7 @@ function copyToClipboard(text, btn) {
 function generateLinks() {
     const searchString = document.getElementById('searchString').value.trim();
     
-    // 1. Get the state of all filters
+    // 1. Get the state of all filters based on the new IDs in index.html
     const filterAISSeniorScholarPremierJournals = document.getElementById('AISSeniorScholarPremierJournals')?.checked || false;
     const filter_Vhb_2024_WI_APlus = document.getElementById('vhb-2024-WI-A+')?.checked || false;
     const filter_Vhb_2024_WI_A = document.getElementById('vhb-2024-WI-A')?.checked || false;
@@ -75,10 +75,10 @@ function generateLinks() {
 
         // Convert the object back into an array for our rendering pipeline
         dbsToRender = Object.entries(groupedPubs).map(([db, pubs]) => ({ db, pubs }));
-        resultsContainer.innerHTML = `<h3>Generated Search Strings (${filteredPubs.length} Publications)</h3>`;
+        resultsContainer.innerHTML = `<h3>Generated Search Strings (${filteredPubs.length} Publications Included)</h3>`;
     }
 
-    // 3. Unifed Rendering Loop
+    // 3. Unified Rendering Loop
     dbsToRender.forEach(({ db, pubs }) => {
         let dbName = "";
         let query = "";
@@ -137,34 +137,30 @@ function generateLinks() {
             const journalListHtml = pubs.map(p => `<li style="margin-bottom: 0.25rem;">${p.name} (ISSN: ${p.ISSN})</li>`).join('');
             publicationsInfoHtml = `
                 <strong style="color: #495057;">Included Publications (${pubs.length}):</strong>
-                <ul style="font-size: 0.9rem; color: #495057; margin-top: 0.5rem; padding-left: 1.5rem;">
+                <ul style="font-size: 0.9rem; color: #495057; margin-top: 0.5rem; padding-left: 1.5rem; max-height: 200px; overflow-y: auto;">
                     ${journalListHtml}
                 </ul>
-            `;
-        } else {
-            publicationsInfoHtml = `
-                <strong style="color: #0056b3;">Searching globally in database (No journal filters applied).</strong>
             `;
         }
 
         // Generate the HTML block for this database
         let html = `
-            <div class="journal-section" style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 6px;">
-                <h4 style="margin-top: 0; font-size: 1.25rem; color: #343a40; border-bottom: 2px solid #0056b3; padding-bottom: 0.5rem;">${dbName}</h4>
+            <div class="journal-section" style="margin-bottom: 2rem; padding: 1.5rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                <h4 style="margin-top: 0; font-size: 1.25rem; color: var(--text-main); border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem;">${dbName}</h4>
                 
                 <div style="margin-bottom: 1rem;">
                     ${publicationsInfoHtml}
                 </div>
 
-                <div style="background-color: #fff; padding: 1rem; border-radius: 4px; border: 1px solid #ced4da;">
-                    <div style="font-size: 0.85rem; color: #6c757d; margin-bottom: 0.5rem; text-transform: uppercase; font-weight: bold;">
+                <div style="background-color: var(--bg); padding: 1rem; border-radius: 6px; border: 1px solid var(--border);">
+                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase; font-weight: bold;">
                         Search String
                     </div>
-                    <code style="display: block; margin-bottom: 1rem; word-break: break-word; color: #d63384; background: #f8f9fa; padding: 0.75rem; border-radius: 4px; border: 1px solid #e9ecef; font-size: 0.9rem;">${query}</code>
+                    <code style="display: block; margin-bottom: 1rem; word-break: break-word; color: #d63384; background: var(--card-bg); padding: 0.75rem; border-radius: 4px; border: 1px solid var(--border); font-size: 0.9rem;">${query}</code>
                     
                     <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-                        <button onclick="copyToClipboard(decodeURIComponent('${safeQuery}'), this)" style="padding: 0.5rem 1rem; background: #28a745; color: white; border: none; cursor: pointer; border-radius: 4px; font-weight: bold; transition: 0.2s;">📋 Copy String</button>
-                        <a href="${url}" target="_blank" style="padding: 0.5rem 1rem; background: #0056b3; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; transition: 0.2s;">↗️ Open in ${dbName}</a>
+                        <button class="card-btn btn-green" onclick="copyToClipboard(decodeURIComponent('${safeQuery}'), this)">📋 Copy String</button>
+                        <a class="card-btn btn-blue" href="${url}" target="_blank">↗️ Open in ${dbName}</a>
                     </div>
                     ${db === 'proquest' ? `<div style="font-size: 0.8rem; color: #dc3545; margin-top: 0.75rem;"><em>Note: ProQuest requires you to manually copy and paste the string into their Advanced Search page.</em></div>` : ''}
                 </div>
