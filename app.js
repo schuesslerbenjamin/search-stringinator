@@ -137,7 +137,7 @@ function generateLinks() {
             const journalListHtml = pubs.map(p => `<li style="margin-bottom: 0.25rem;">${p.name} (ISSN: ${p.ISSN})</li>`).join('');
             publicationsInfoHtml = `
                 <strong style="color: #495057;">Included Publications (${pubs.length}):</strong>
-                <ul style="font-size: 0.9rem; color: #495057; margin-top: 0.5rem; padding-left: 1.5rem; max-height: 200px; overflow-y: auto;">
+                <ul style="font-size: 0.9rem; color: #495057; margin-top: 0.5rem; padding-left: 1.5rem; max-height: 150px; overflow-y: auto;">
                     ${journalListHtml}
                 </ul>
             `;
