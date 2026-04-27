@@ -110,11 +110,12 @@ function generateLinks() {
         } 
         else if (db === "proquest") {
             dbName = "ProQuest";
+            const textFieldsQuery = `(TITLE(${searchString}) OR ABSTRACT(${searchString}) OR IF(${searchString}))`;
             if (hasPubs) {
                 const issnString = pubs.map(p => `issn(${p.ISSN})`).join(' OR ');
-                query = `noft(${searchString}) AND (${issnString})`;
+                query = `${textFieldsQuery} AND (${issnString})`;
             } else {
-                query = `noft(${searchString})`;
+                query = textFieldsQuery;
             }
             url = `https://www.proquest.com/search/advanced`;
         } 
