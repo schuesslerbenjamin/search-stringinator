@@ -24,6 +24,7 @@ function generateLinks() {
     const filter_Vhb_2024_WI_APlus = document.getElementById('vhb-2024-WI-A+')?.checked || false;
     const filter_Vhb_2024_WI_A = document.getElementById('vhb-2024-WI-A')?.checked || false;
     const filter_Vhb_2024_WI_B = document.getElementById('vhb-2024-WI-B')?.checked || false;
+    const filter_Vhb_2024_WI_Conference_A = document.getElementById('vhb-2024-WI-conference-A')?.checked || false;
     
     const resultsContainer = document.getElementById('results');
 
@@ -35,7 +36,8 @@ function generateLinks() {
     const noFiltersSelected = !filterAISSeniorScholarPremierJournals && 
                               !filter_Vhb_2024_WI_APlus && 
                               !filter_Vhb_2024_WI_A && 
-                              !filter_Vhb_2024_WI_B;
+                              !filter_Vhb_2024_WI_B &&
+                              !filter_Vhb_2024_WI_Conference_A;
 
     let dbsToRender = [];
 
@@ -55,6 +57,7 @@ function generateLinks() {
             if (filter_Vhb_2024_WI_APlus && pub['VHB-2024-WI-rank'] === "A+") return true;
             if (filter_Vhb_2024_WI_A && pub['VHB-2024-WI-rank'] === "A") return true;
             if (filter_Vhb_2024_WI_B && pub['VHB-2024-WI-rank'] === "B") return true;
+            if (filter_Vhb_2024_WI_Conference_A && pub['VHB-2024-WI-conference-rank'] === "A") return true;
             return false; // Drop it if it didn't match any selected filter
         });
 
@@ -66,7 +69,7 @@ function generateLinks() {
         // Group the filtered publications by database
         const groupedPubs = filteredPubs.reduce((acc, pub) => {
             const db = pub.database;
-            if (db && ["scopus", "ebscohost", "proquest", "acm"].includes(db)) {
+            if (db && ["scopus", "ebscohost", "proquest", "acm", "aisel"].includes(db)) {
                 if (!acc[db]) acc[db] = [];
                 acc[db].push(pub);
             }
@@ -129,13 +132,28 @@ function generateLinks() {
             }
             url = `https://dl.acm.org/action/doSearch?fillQuickSearch=false&target=advanced&expand=dl&AllField=${encodeURIComponent(query)}`;
         }
+        else if (db === "aisel") {
+            dbName = "AIS eLibrary";
+            const publicationTitles = pubs
+                .map(p => p.search_term || p.name)
+                .filter(Boolean)
+                .map(term => term.toLowerCase())
+                .join(' OR ');
+            query = `(title:(${searchString}) OR abstract:(${searchString}) OR subject:(${searchString})) AND publication_title:(${publicationTitles})`;
+            url = `https://aisel.aisnet.org/do/search/?q=${encodeURIComponent(query)}&start=0`;
+        }
 
         const safeQuery = encodeURIComponent(query);
         
         // Dynamically build the header area depending on whether filters were applied
         let publicationsInfoHtml = "";
         if (hasPubs) {
-            const journalListHtml = pubs.map(p => `<li style="margin-bottom: 0.25rem;">${p.name} (ISSN: ${p.ISSN})</li>`).join('');
+            const journalListHtml = pubs.map(p => {
+                const metadata = p.ISSN
+                    ? `ISSN: ${p.ISSN}`
+                    : (p.search_term ? `Search term: ${p.search_term}` : "");
+                return `<li style="margin-bottom: 0.25rem;">${p.name}${metadata ? ` (${metadata})` : ""}</li>`;
+            }).join('');
             publicationsInfoHtml = `
                 <strong style="color: #495057;">Included Publications (${pubs.length}):</strong>
                 <ul style="font-size: 0.9rem; color: #495057; margin-top: 0.5rem; padding-left: 1.5rem; max-height: 150px; overflow-y: auto;">

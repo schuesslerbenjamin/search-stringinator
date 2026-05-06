@@ -222,5 +222,17 @@
     "ISSN": "0306-4379",
     "isISSeniorScholarBasket": false,
     "VHB-2024-WI-rank": "B"
+  },
+  {
+    "name": "International Conference on Information Systems (ICIS)",
+    "database": "aisel",
+    "search_term": "icis",
+    "VHB-2024-WI-conference-rank": "A"
+  },
+  {
+    "name": "European Conference on Information Systems (ECIS)",
+    "database": "aisel",
+    "search_term": "ecis",
+    "VHB-2024-WI-conference-rank": "A"
   }
 ]
