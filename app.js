@@ -47,7 +47,8 @@ function generateLinks() {
             { db: "scopus", pubs: [] },
             { db: "ebscohost", pubs: [] },
             { db: "proquest", pubs: [] },
-            { db: "acm", pubs: [] }
+            { db: "acm", pubs: [] },
+            { db: "aisel", pubs: [] }
         ];
         resultsContainer.innerHTML = `<h3>Generated Search Strings (All Publications - No Filters Applied)</h3>`;
     } else {
@@ -139,7 +140,10 @@ function generateLinks() {
                 .filter(Boolean)
                 .map(term => term.toLowerCase())
                 .join(' OR ');
-            query = `(title:(${searchString}) OR abstract:(${searchString}) OR subject:(${searchString})) AND publication_title:(${publicationTitles})`;
+            query = `title:(${searchString}) OR abstract:(${searchString}) OR subject:(${searchString})`;
+            if (hasPubs) {
+                query = `(${query}) AND publication_title:(${publicationTitles})`;
+            }
             url = `https://aisel.aisnet.org/do/search/?q=${encodeURIComponent(query)}&start=0`;
         }
 
