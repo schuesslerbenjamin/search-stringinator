@@ -234,5 +234,23 @@
     "database": "aisel",
     "search_term": "ecis",
     "VHB-2024-WI-conference-rank": "A"
+  },
+  {
+    "name": "Management Science",
+    "database": "ebscohost",
+    "ISSN": "0025-1909",
+    "VHB-2024-WI-interface-rank": "A+"
+  },
+  {
+    "name": "Organization Science",
+    "database": "ebscohost",
+    "ISSN": "1047-7039",
+    "VHB-2024-WI-interface-rank": "A+"
+  },
+  {
+    "name": "Operations Research",
+    "database": "ebscohost",
+    "ISSN": "0030-364X",
+    "VHB-2024-WI-interface-rank": "A+"
   }
 ]
