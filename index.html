@@ -85,11 +85,25 @@
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
-        .filters { 
-            display: flex; 
+        .filters {
+            display: flex;
             flex-direction: column;
-            gap: 0.75rem; 
-            margin-top: 1rem; 
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .filter-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
 
         .filters label {
@@ -106,6 +120,67 @@
             height: 18px;
             accent-color: var(--primary);
             cursor: pointer;
+        }
+
+        .vhb-table-wrap {
+            overflow-x: auto;
+        }
+
+        .vhb-table {
+            width: max-content;
+            border-collapse: separate;
+            border-spacing: 0.75rem 0.6rem;
+        }
+
+        .vhb-table th,
+        .vhb-table td {
+            border: none;
+            padding: 0.35rem 0.4rem;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .vhb-table th {
+            background: #e8eef8;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .vhb-table .row-label {
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .vhb-table .cell-check {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: #f8fafc;
+            border: 1px solid #e7ecf4;
+        }
+
+        .vhb-table .cell-check input[type="checkbox"] {
+            margin: 0;
+        }
+
+        .vhb-table .cell-disabled {
+            background: transparent;
+        }
+
+        .vhb-table .cell-disabled::before {
+            content: "";
+            display: inline-flex;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: #f1f5f9;
+            border: 1px solid #e7ecf4;
         }
 
         /* Modernized Primary Button */
@@ -187,13 +262,46 @@
     <div class="form-group">
         <strong>Filters:</strong>
         <div class="filters">
-            <label><input type="checkbox" id="AISSeniorScholarPremierJournals"> AIS Senior Scholars' List of Premier Journals</label>
-            <label><input type="checkbox" id="vhb-2024-WI-A+"> VHB WI (2024) A+</label>
-            <label><input type="checkbox" id="vhb-2024-WI-A"> VHB WI (2024) A</label>
-            <label><input type="checkbox" id="vhb-2024-WI-B"> VHB WI (2024) B</label>
-            <label><input type="checkbox" id="vhb-2024-WI-conference-A"> VHB WI Conference (2024) A</label>
-            <label><input type="checkbox" id="vhb-2024-WI-interface-A+"> VHB Interface to WI (2024) A+</label>
-            <label><input type="checkbox" id="vhb-2024-WI-interface-A"> VHB Interface to WI (2024) A</label>
+            <div class="filter-group">
+                <div class="filter-title">AIS Senior Scholars</div>
+                <label><input type="checkbox" id="AISSeniorScholarPremierJournals"> AIS Senior Scholars' List of Premier Journals</label>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-title">VHB WI 2024 Ranking</div>
+                <div class="vhb-table-wrap">
+                    <table class="vhb-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>A+</th>
+                                <th>A</th>
+                                <th>B</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="row-label">WI Journals</td>
+                                <td><label class="cell-check"><input type="checkbox" id="vhb-2024-WI-A+" aria-label="WI A+"></label></td>
+                                <td><label class="cell-check"><input type="checkbox" id="vhb-2024-WI-A" aria-label="WI A"></label></td>
+                                <td><label class="cell-check"><input type="checkbox" id="vhb-2024-WI-B" aria-label="WI B"></label></td>
+                            </tr>
+                            <tr>
+                                <td class="row-label">WI Conferences</td>
+                                <td class="cell-disabled"></td>
+                                <td><label class="cell-check"><input type="checkbox" id="vhb-2024-WI-conference-A" aria-label="Conference A"></label></td>
+                                <td class="cell-disabled"></td>
+                            </tr>
+                            <tr>
+                                <td class="row-label">Journals @ WI Interface</td>
+                                <td><label class="cell-check"><input type="checkbox" id="vhb-2024-WI-interface-A+" aria-label="Interface A+"></label></td>
+                                <td><label class="cell-check"><input type="checkbox" id="vhb-2024-WI-interface-A" aria-label="Interface A"></label></td>
+                                <td class="cell-disabled"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 
