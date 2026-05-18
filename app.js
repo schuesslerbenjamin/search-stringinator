@@ -26,6 +26,7 @@ function generateLinks() {
     const filter_Vhb_2024_WI_B = document.getElementById('vhb-2024-WI-B')?.checked || false;
     const filter_Vhb_2024_WI_Conference_A = document.getElementById('vhb-2024-WI-conference-A')?.checked || false;
     const filter_Vhb_2024_WI_Interface_APlus = document.getElementById('vhb-2024-WI-interface-A+')?.checked || false;
+    const filter_Vhb_2024_WI_Interface_A = document.getElementById('vhb-2024-WI-interface-A')?.checked || false;
     
     const resultsContainer = document.getElementById('results');
 
@@ -39,7 +40,8 @@ function generateLinks() {
                               !filter_Vhb_2024_WI_A && 
                               !filter_Vhb_2024_WI_B &&
                               !filter_Vhb_2024_WI_Conference_A &&
-                              !filter_Vhb_2024_WI_Interface_APlus;
+                              !filter_Vhb_2024_WI_Interface_APlus &&
+                              !filter_Vhb_2024_WI_Interface_A;
 
     let dbsToRender = [];
 
@@ -62,6 +64,7 @@ function generateLinks() {
             if (filter_Vhb_2024_WI_B && pub['VHB-2024-WI-rank'] === "B") return true;
             if (filter_Vhb_2024_WI_Conference_A && pub['VHB-2024-WI-conference-rank'] === "A") return true;
             if (filter_Vhb_2024_WI_Interface_APlus && pub['VHB-2024-WI-interface-rank'] === "A+") return true;
+            if (filter_Vhb_2024_WI_Interface_A && pub['VHB-2024-WI-interface-rank'] === "A") return true;
             return false; // Drop it if it didn't match any selected filter
         });
 

@@ -252,5 +252,71 @@
     "database": "ebscohost",
     "ISSN": "0030-364X",
     "VHB-2024-WI-interface-rank": "A+"
+  },
+  {
+    "name": "Transportation Science",
+    "database": "ebscohost",
+    "ISSN": "0041-1655",
+    "VHB-2024-WI-interface-rank": "A"
+  },
+  {
+    "name": "European Journal of Operational Research",
+    "database": "ebscohost",
+    "ISSN": "0377-2217",
+    "VHB-2024-WI-interface-rank": "A"
+  },
+  {
+    "name": "Production and Operations Management",
+    "database": "ebscohost",
+    "ISSN": "1059-1478",
+    "VHB-2024-WI-interface-rank": "A"
+  },
+  {
+    "name": "Journal of Service Research",
+    "database": "ebscohost",
+    "ISSN": "1094-6705",
+    "VHB-2024-WI-interface-rank": "A"
+  },
+  {
+    "name": "Manufacturing & Service Operations Management",
+    "database": "ebscohost",
+    "ISSN": "1523-4614",
+    "VHB-2024-WI-interface-rank": "A"
+  },
+  {
+    "name": "Journal of Operations Management",
+    "database": "ebscohost",
+    "ISSN": "0272-6963",
+    "VHB-2024-WI-interface-rank": "A"
+  },
+  {
+    "name": "Nature Human Behaviour",
+    "database": "ebscohost",
+    "ISSN": "2397-3374",
+    "VHB-2024-WI-interface-rank": "A"
+  },
+  {
+    "name": "INFORMS Journal on Computing",
+    "database": "ebscohost",
+    "ISSN": "1091-9856",
+    "VHB-2024-WI-interface-rank": "A"
+  },
+  {
+    "name": "OR Spectrum",
+    "database": "ebscohost",
+    "ISSN": "0171-6468",
+    "VHB-2024-WI-interface-rank": "A"
+  },
+  {
+    "name": "Nature Machine Intelligence",
+    "database": "scopus",
+    "ISSN": "2522-5839",
+    "VHB-2024-WI-interface-rank": "A"
+  },
+  {
+    "name": "SIAM Journal on Computing",
+    "database": "ebscohost",
+    "ISSN": "0097-5397",
+    "VHB-2024-WI-interface-rank": "A"
   }
 ]
