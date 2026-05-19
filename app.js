@@ -137,7 +137,7 @@ function generateLinks() {
             } else {
                 query = `(Title:(${searchString}) OR Abstract:(${searchString}) OR Keyword:(${searchString}))`;
             }
-            url = `https://dl.acm.org/action/doSearch?fillQuickSearch=false&target=advanced&expand=dl&AllField=${encodeURIComponent(query)}`;
+            url = `https://dl.acm.org/action/doSearch?fillQuickSearch=false&target=advanced&expand=all&AllField=${encodeURIComponent(query)}`;
         }
         else if (db === "aisel") {
             dbName = "AIS eLibrary";
