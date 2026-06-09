@@ -18,7 +18,11 @@
     "database": "acm",
     "ISSN": "1387-3326",
     "isISSeniorScholarBasket": false,
-    "VHB-2024-WI-rank": "B"
+    "VHB-2024-WI-rank": "B",
+    "AIS SIG Categories": [
+      "IS/IT Issues in Asia Pacific (SIG ISAP)",
+      "Organizational Systems Research (SIG OSRA)"
+    ]
   },
   {
     "name": "ACM Transactions on Information Systems",
@@ -46,7 +50,12 @@
     "database": "ebscohost",
     "ISSN": "0167-9236",
     "isISSeniorScholarBasket": true,
-    "VHB-2024-WI-rank": "B"
+    "VHB-2024-WI-rank": "B",
+    "AIS SIG Categories": [
+      "Artificial Intelligence (SIG AI); formerly Artificial Intelligence & Autonomous Application",
+      "Big Data Application Process (SIG BD)",
+      "IT Project Management (SIG ITProjMgmt)"
+    ]
   },
   {
     "name": "European Journal of Information Systems",
@@ -67,21 +76,34 @@
     "database": "ebscohost",
     "ISSN": "1350-1917",
     "isISSeniorScholarBasket": true,
-    "VHB-2024-WI-rank": "A"
+    "VHB-2024-WI-rank": "A",
+    "AIS SIG Categories": [
+      "IT Project Management (SIG ITProjMgmt)",
+      "Systems Analysis and Design (SIG SAND)"
+    ]
   },
   {
     "name": "Information Systems Research",
     "database": "ebscohost",
     "ISSN": "1047-7047",
     "isISSeniorScholarBasket": true,
-    "VHB-2024-WI-rank": "A+"
+    "VHB-2024-WI-rank": "A+",
+    "AIS SIG Categories": [
+      "IT Project Management (SIG ITProjMgmt)"
+    ]
   },
   {
     "name": "Information Technology & People",
     "database": "ebscohost",
     "ISSN": "0959-3845",
     "isISSeniorScholarBasket": false,
-    "VHB-2024-WI-rank": "B"
+    "VHB-2024-WI-rank": "B",
+    "AIS SIG Categories": [
+      "Adoption and Diffusion of IT (SIG ADIT)",
+      "IS/IT Issues in Asia Pacific (SIG ISAP)",
+      "Organizational Systems Research (SIG OSRA)",
+      "Social Inclusion (SIG SI)"
+    ]
   },
   {
     "name": "International Journal of Electronic Commerce",
@@ -95,14 +117,20 @@
     "database": "ebscohost",
     "ISSN": "0268-4012",
     "isISSeniorScholarBasket": false,
-    "VHB-2024-WI-rank": "B"
+    "VHB-2024-WI-rank": "B",
+    "AIS SIG Categories": [
+      "Social Inclusion (SIG SI)"
+    ]
   },
   {
     "name": "Internet Research",
     "database": "ebscohost",
     "ISSN": "1066-2243",
     "isISSeniorScholarBasket": false,
-    "VHB-2024-WI-rank": "B"
+    "VHB-2024-WI-rank": "B",
+    "AIS SIG Categories": [
+      "Adoption and Diffusion of IT (SIG ADIT)"
+    ]
   },
   {
     "name": "Journal of Decision Systems",
@@ -137,7 +165,10 @@
     "database": "ebscohost",
     "ISSN": "1540-1960",
     "isISSeniorScholarBasket": false,
-    "VHB-2024-WI-rank": "B"
+    "VHB-2024-WI-rank": "B",
+    "AIS SIG Categories": [
+      "Green IS (SIG Green)"
+    ]
   },
   {
     "name": "Software and Systems Modeling",
@@ -165,7 +196,10 @@
     "database": "proquest",
     "ISSN": "1867-0202",
     "isISSeniorScholarBasket": false,
-    "VHB-2024-WI-rank": "B"
+    "VHB-2024-WI-rank": "B",
+    "AIS SIG Categories": [
+      "Services (SIG SVC)"
+    ]
   },
   {
     "name": "Electronic Markets : EM",
@@ -179,21 +213,30 @@
     "database": "proquest",
     "ISSN": "1872-7530",
     "isISSeniorScholarBasket": true,
-    "VHB-2024-WI-rank": "B"
+    "VHB-2024-WI-rank": "B",
+    "AIS SIG Categories": [
+      "IT Project Management (SIG ITProjMgmt)"
+    ]
   },
   {
     "name": "Information and Organization",
     "database": "proquest",
     "ISSN": "14717727",
     "isISSeniorScholarBasket": true,
-    "VHB-2024-WI-rank": "B"
+    "VHB-2024-WI-rank": "B",
+    "AIS SIG Categories": [
+      "IT Project Management (SIG ITProjMgmt)"
+    ]
   },
   {
     "name": "Information Systems Management",
     "database": "proquest",
     "ISSN": "10580530",
     "isISSeniorScholarBasket": false,
-    "VHB-2024-WI-rank": "B"
+    "VHB-2024-WI-rank": "B",
+    "AIS SIG Categories": [
+      "Leadership in IT (SIG LEAD)"
+    ]
   },
   {
     "name": "Information Technology and Management",
@@ -207,7 +250,10 @@
     "database": "proquest",
     "ISSN": "1466-4437",
     "isISSeniorScholarBasket": true,
-    "VHB-2024-WI-rank": "A"
+    "VHB-2024-WI-rank": "A",
+    "AIS SIG Categories": [
+      "IT Project Management (SIG ITProjMgmt)"
+    ]
   },
   {
     "name": "Scandinavian Journal of Information Systems",
@@ -245,7 +291,10 @@
     "name": "Organization Science",
     "database": "ebscohost",
     "ISSN": "1047-7039",
-    "VHB-2024-WI-interface-rank": "A+"
+    "VHB-2024-WI-interface-rank": "A+",
+    "AIS SIG Categories": [
+      "Organizational Systems Research (SIG OSRA)"
+    ]
   },
   {
     "name": "Operations Research",
@@ -275,7 +324,10 @@
     "name": "Journal of Service Research",
     "database": "ebscohost",
     "ISSN": "1094-6705",
-    "VHB-2024-WI-interface-rank": "A"
+    "VHB-2024-WI-interface-rank": "A",
+    "AIS SIG Categories": [
+      "Services (SIG SVC)"
+    ]
   },
   {
     "name": "Manufacturing & Service Operations Management",
@@ -318,5 +370,654 @@
     "database": "ebscohost",
     "ISSN": "0097-5397",
     "VHB-2024-WI-interface-rank": "A"
+  },
+  {
+    "name": "Academy of Management Journal",
+    "database": "scopus",
+    "ISSN": "0001-4273",
+    "AIS SIG Categories": [
+      "Organizational Systems Research (SIG OSRA)"
+    ]
+  },
+  {
+    "name": "IEEE Transactions on Engineering Management",
+    "database": "scopus",
+    "ISSN": "0018-9391",
+    "AIS SIG Categories": [
+      "Digital Sourcing, Platforms and Ecosystems (SIGDSPE); formerly Advances in Sourcing (SIG Sourcing)",
+      "IS/IT Issues in Asia Pacific (SIG ISAP)"
+    ]
+  },
+  {
+    "name": "Technological Forecasting and Social Change",
+    "database": "scopus",
+    "ISSN": "0040-1625",
+    "AIS SIG Categories": [
+      "Green IS (SIG Green)"
+    ]
+  },
+  {
+    "name": "Data Base For Advances In Information Systems",
+    "database": "scopus",
+    "ISSN": "0095-0033",
+    "AIS SIG Categories": [
+      "Leadership in IT (SIG LEAD)"
+    ]
+  },
+  {
+    "name": "IEEE Transactions on Software Engineering",
+    "database": "scopus",
+    "ISSN": "0098-5589",
+    "AIS SIG Categories": [
+      "Digital Sourcing, Platforms and Ecosystems (SIGDSPE); formerly Advances in Sourcing (SIG Sourcing)"
+    ]
+  },
+  {
+    "name": "Behavior & Information Technology",
+    "database": "scopus",
+    "ISSN": "0144-929X",
+    "AIS SIG Categories": [
+      "Leadership in IT (SIG LEAD)"
+    ]
+  },
+  {
+    "name": "Journal of Systems and Software",
+    "database": "scopus",
+    "ISSN": "0164-1212",
+    "AIS SIG Categories": [
+      "Digital Sourcing, Platforms and Ecosystems (SIGDSPE); formerly Advances in Sourcing (SIG Sourcing)"
+    ]
+  },
+  {
+    "name": "Computers & Security",
+    "database": "scopus",
+    "ISSN": "0167-4048",
+    "AIS SIG Categories": [
+      "Information Security and Privacy (SIG SEC)"
+    ]
+  },
+  {
+    "name": "Journal of Business Ethics",
+    "database": "scopus",
+    "ISSN": "0167-4544",
+    "AIS SIG Categories": [
+      "Green IS (SIG Green)"
+    ]
+  },
+  {
+    "name": "Expert Systems: The Journal of Knowledge Engineering",
+    "database": "scopus",
+    "ISSN": "0266-4720",
+    "AIS SIG Categories": [
+      "Artificial Intelligence (SIG AI); formerly Artificial Intelligence & Autonomous Application"
+    ]
+  },
+  {
+    "name": "Information Technology for Development",
+    "database": "scopus",
+    "ISSN": "0268-1102",
+    "AIS SIG Categories": [
+      "ICT and Global Development (SIG GlobDev)"
+    ]
+  },
+  {
+    "name": "MIS Quarterly (MISQ)",
+    "database": "scopus",
+    "ISSN": "0276-7783",
+    "AIS SIG Categories": [
+      "IT Project Management (SIG ITProjMgmt)",
+      "Systems Analysis and Design (SIG SAND)"
+    ]
+  },
+  {
+    "name": "ACM Transactions on Database Systems",
+    "database": "scopus",
+    "ISSN": "0362-5915",
+    "AIS SIG Categories": [
+      "Systems Analysis and Design (SIG SAND)"
+    ]
+  },
+  {
+    "name": "Journal of Product Innovation Management",
+    "database": "scopus",
+    "ISSN": "0737-6782",
+    "AIS SIG Categories": [
+      "Digital Sourcing, Platforms and Ecosystems (SIGDSPE); formerly Advances in Sourcing (SIG Sourcing)"
+    ]
+  },
+  {
+    "name": "AI Magazine",
+    "database": "scopus",
+    "ISSN": "0738-4602",
+    "AIS SIG Categories": [
+      "Artificial Intelligence (SIG AI); formerly Artificial Intelligence & Autonomous Application"
+    ]
+  },
+  {
+    "name": "Journal of Management Information Systems (JMIS)",
+    "database": "scopus",
+    "ISSN": "0742-1222",
+    "AIS SIG Categories": [
+      "IT Project Management (SIG ITProjMgmt)",
+      "Systems Analysis and Design (SIG SAND)"
+    ]
+  },
+  {
+    "name": "Journal of Information Systems",
+    "database": "scopus",
+    "ISSN": "0888-7985",
+    "AIS SIG Categories": [
+      "Accounting IS (SIG ASYS)"
+    ]
+  },
+  {
+    "name": "Requirements Engineering",
+    "database": "scopus",
+    "ISSN": "0947-3602",
+    "AIS SIG Categories": [
+      "Systems Analysis and Design (SIG SAND)"
+    ]
+  },
+  {
+    "name": "Information and Software Technology",
+    "database": "scopus",
+    "ISSN": "0950-5849",
+    "AIS SIG Categories": [
+      "Digital Sourcing, Platforms and Ecosystems (SIGDSPE); formerly Advances in Sourcing (SIG Sourcing)"
+    ]
+  },
+  {
+    "name": "Expert Systems with Applications",
+    "database": "scopus",
+    "ISSN": "0957-4174",
+    "AIS SIG Categories": [
+      "Artificial Intelligence (SIG AI); formerly Artificial Intelligence & Autonomous Application"
+    ]
+  },
+  {
+    "name": "Journal of Cleaner Production",
+    "database": "scopus",
+    "ISSN": "0959-6526",
+    "AIS SIG Categories": [
+      "Green IS (SIG Green)"
+    ]
+  },
+  {
+    "name": "European Journal of Information Systems (EJIS)",
+    "database": "scopus",
+    "ISSN": "0960-085X",
+    "AIS SIG Categories": [
+      "IT Project Management (SIG ITProjMgmt)",
+      "Systems Analysis and Design (SIG SAND)"
+    ]
+  },
+  {
+    "name": "Journal of Strategic Information Systems",
+    "database": "scopus",
+    "ISSN": "0963-8687",
+    "AIS SIG Categories": [
+      "IT Project Management (SIG ITProjMgmt)"
+    ]
+  },
+  {
+    "name": "Business Strategy and the Environment",
+    "database": "scopus",
+    "ISSN": "0964-4733",
+    "AIS SIG Categories": [
+      "Green IS (SIG Green)"
+    ]
+  },
+  {
+    "name": "Transactions on Knowledge and Data Engineering",
+    "database": "scopus",
+    "ISSN": "1041-4347",
+    "AIS SIG Categories": [
+      "Systems Analysis and Design (SIG SAND)"
+    ]
+  },
+  {
+    "name": "Simulation and Gaming",
+    "database": "scopus",
+    "ISSN": "1046-8781",
+    "AIS SIG Categories": [
+      "GAME (SIG GAME)"
+    ]
+  },
+  {
+    "name": "Information Systems Research (ISR)",
+    "database": "scopus",
+    "ISSN": "1047-7047",
+    "AIS SIG Categories": [
+      "Systems Analysis and Design (SIG SAND)"
+    ]
+  },
+  {
+    "name": "Journal of Information Systems Education (JISE)",
+    "database": "scopus",
+    "ISSN": "1055-3096",
+    "AIS SIG Categories": [
+      "Education (SIG ED)"
+    ]
+  },
+  {
+    "name": "Journal of Database Management",
+    "database": "scopus",
+    "ISSN": "1063-8016",
+    "AIS SIG Categories": [
+      "Systems Analysis and Design (SIG SAND)"
+    ]
+  },
+  {
+    "name": "Organization & Environment",
+    "database": "scopus",
+    "ISSN": "1086-0266",
+    "AIS SIG Categories": [
+      "Green IS (SIG Green)"
+    ]
+  },
+  {
+    "name": "Journal of Industrial Ecology",
+    "database": "scopus",
+    "ISSN": "1088-1980",
+    "AIS SIG Categories": [
+      "Green IS (SIG Green)"
+    ]
+  },
+  {
+    "name": "Complexity",
+    "database": "scopus",
+    "ISSN": "1099-0526",
+    "AIS SIG Categories": [
+      "Big Data Application Process (SIG BD)"
+    ]
+  },
+  {
+    "name": "Australasian Journal of Information Systems",
+    "database": "proquest",
+    "ISSN": "1326-2238",
+    "AIS SIG Categories": [
+      "Education (SIG ED)"
+    ]
+  },
+  {
+    "name": "Education & Information Technology",
+    "database": "scopus",
+    "ISSN": "1360-2357",
+    "AIS SIG Categories": [
+      "Leadership in IT (SIG LEAD)"
+    ]
+  },
+  {
+    "name": "Transportation Research Part D: Transport and Environment",
+    "database": "scopus",
+    "ISSN": "1361-9209",
+    "AIS SIG Categories": [
+      "Green IS (SIG Green)"
+    ]
+  },
+  {
+    "name": "Empirical Software Engineering",
+    "database": "scopus",
+    "ISSN": "1382-3256",
+    "AIS SIG Categories": [
+      "Digital Sourcing, Platforms and Ecosystems (SIGDSPE); formerly Advances in Sourcing (SIG Sourcing)"
+    ]
+  },
+  {
+    "name": "International Journal of Medical Informatics",
+    "database": "scopus",
+    "ISSN": "1386-5056",
+    "AIS SIG Categories": [
+      "IT in Health Care (SIG Health)"
+    ]
+  },
+  {
+    "name": "Electronic Commerce Research",
+    "database": "scopus",
+    "ISSN": "1389-5753",
+    "AIS SIG Categories": [
+      "E-Business (SIG EBIZ)"
+    ]
+  },
+  {
+    "name": "Electronic Markets",
+    "database": "scopus",
+    "ISSN": "1422-8890",
+    "AIS SIG Categories": [
+      "Services (SIG SVC)"
+    ]
+  },
+  {
+    "name": "Journal of Medical Internet Research",
+    "database": "scopus",
+    "ISSN": "1438-8871",
+    "AIS SIG Categories": [
+      "IT in Health Care (SIG Health)"
+    ]
+  },
+  {
+    "name": "International Journal of Accounting Information Systems",
+    "database": "scopus",
+    "ISSN": "1467-0895",
+    "AIS SIG Categories": [
+      "Accounting IS (SIG ASYS)"
+    ]
+  },
+  {
+    "name": "Journal of the American Medical Informatics Association",
+    "database": "scopus",
+    "ISSN": "1527-974X",
+    "AIS SIG Categories": [
+      "IT in Health Care (SIG Health)"
+    ]
+  },
+  {
+    "name": "Communications of the Association for Information Systems (CAIS)",
+    "database": "scopus",
+    "ISSN": "1529-3181",
+    "AIS SIG Categories": [
+      "Education (SIG ED)",
+      "Green IS (SIG Green)",
+      "Social Inclusion (SIG SI)"
+    ]
+  },
+  {
+    "name": "Journal of the Association for Information Systems (JAIS)",
+    "database": "scopus",
+    "ISSN": "1536-9323",
+    "AIS SIG Categories": [
+      "IT Project Management (SIG ITProjMgmt)",
+      "Systems Analysis and Design (SIG SAND)"
+    ]
+  },
+  {
+    "name": "Decision Sciences Journal of Innovative Education",
+    "database": "scopus",
+    "ISSN": "1540-4595",
+    "AIS SIG Categories": [
+      "Decision Support and Analytics (SIG DSA)",
+      "GAME (SIG GAME)"
+    ]
+  },
+  {
+    "name": "IEEE Security & Privacy",
+    "database": "scopus",
+    "ISSN": "1540-7993",
+    "AIS SIG Categories": [
+      "Information Security and Privacy (SIG SEC)"
+    ]
+  },
+  {
+    "name": "IEEE Intelligent Systems",
+    "database": "scopus",
+    "ISSN": "1541-1672",
+    "AIS SIG Categories": [
+      "Artificial Intelligence (SIG AI); formerly Artificial Intelligence & Autonomous Application"
+    ]
+  },
+  {
+    "name": "IEEE Transactions on Dependable and Secure Computing",
+    "database": "scopus",
+    "ISSN": "1545-5971",
+    "AIS SIG Categories": [
+      "Information Security and Privacy (SIG SEC)"
+    ]
+  },
+  {
+    "name": "Intelligent Systems in Accounting, Finance and Management",
+    "database": "ebscohost",
+    "ISSN": "1550-1949",
+    "AIS SIG Categories": [
+      "Artificial Intelligence (SIG AI); formerly Artificial Intelligence & Autonomous Application",
+      "Accounting IS (SIG ASYS)"
+    ]
+  },
+  {
+    "name": "Journal of Emerging Technologies in Accounting",
+    "database": "scopus",
+    "ISSN": "1554-1908",
+    "AIS SIG Categories": [
+      "Accounting IS (SIG ASYS)"
+    ]
+  },
+  {
+    "name": "Games and Culture",
+    "database": "scopus",
+    "ISSN": "1555-4120",
+    "AIS SIG Categories": [
+      "GAME (SIG GAME)"
+    ]
+  },
+  {
+    "name": "ACM Transactions on Knowledge Discovery from Data",
+    "database": "scopus",
+    "ISSN": "1556-4681",
+    "AIS SIG Categories": [
+      "Big Data Application Process (SIG BD)"
+    ]
+  },
+  {
+    "name": "IEEE Transactions on Information Forensics and Security",
+    "database": "scopus",
+    "ISSN": "1556-6013",
+    "AIS SIG Categories": [
+      "Information Security and Privacy (SIG SEC)"
+    ]
+  },
+  {
+    "name": "Electronic Commerce Research and Applications",
+    "database": "scopus",
+    "ISSN": "1567-4223",
+    "AIS SIG Categories": [
+      "E-Business (SIG EBIZ)"
+    ]
+  },
+  {
+    "name": "International Journal of Digital Accounting Research",
+    "database": "None",
+    "ISSN": "1577-8517",
+    "AIS SIG Categories": [
+      "Accounting IS (SIG ASYS)"
+    ]
+  },
+  {
+    "name": "Journal Of Enterprise Information Management",
+    "database": "scopus",
+    "ISSN": "1741-0398",
+    "AIS SIG Categories": [
+      "Leadership in IT (SIG LEAD)"
+    ]
+  },
+  {
+    "name": "Journal of Informetrics",
+    "database": "scopus",
+    "ISSN": "1751-1577",
+    "AIS SIG Categories": [
+      "E-Business (SIG EBIZ)"
+    ]
+  },
+  {
+    "name": "Enterprise Information Systems",
+    "database": "scopus",
+    "ISSN": "1751-7575",
+    "AIS SIG Categories": [
+      "Organizational Systems Research (SIG OSRA)"
+    ]
+  },
+  {
+    "name": "BioData Mining",
+    "database": "scopus",
+    "ISSN": "1756-0381",
+    "AIS SIG Categories": [
+      "Big Data Application Process (SIG BD)"
+    ]
+  },
+  {
+    "name": "Journal of Service Management",
+    "database": "scopus",
+    "ISSN": "1757-5818",
+    "AIS SIG Categories": [
+      "Services (SIG SVC)"
+    ]
+  },
+  {
+    "name": "Database",
+    "database": "scopus",
+    "ISSN": "1758-0463",
+    "AIS SIG Categories": [
+      "Systems Analysis and Design (SIG SAND)"
+    ]
+  },
+  {
+    "name": "AIS Transaction on Enterprise Systems’ (AIS-TES)",
+    "database": "None",
+    "ISSN": "1867-7134",
+    "AIS SIG Categories": [
+      "Enterprise-level Information Systems (SIG ENTSYS)"
+    ]
+  },
+  {
+    "name": "Entertainment Computing",
+    "database": "scopus",
+    "ISSN": "1875-9521",
+    "AIS SIG Categories": [
+      "GAME (SIG GAME)"
+    ]
+  },
+  {
+    "name": "Pacific Asia Journal of the Association for Information Systems",
+    "database": "aisel",
+    "ISSN": "1943-7544",
+    "AIS SIG Categories": [
+      "IS/IT Issues in Asia Pacific (SIG ISAP)"
+    ]
+  },
+  {
+    "name": "AIS Transactions of Human Computer Interaction",
+    "database": "aisel",
+    "ISSN": "1944-3900",
+    "AIS SIG Categories": [
+      "GAME (SIG GAME)"
+    ]
+  },
+  {
+    "name": "International Journal Of Human Capital And Information Technology Professionals",
+    "database": "scopus",
+    "ISSN": "1947-3478",
+    "AIS SIG Categories": [
+      "Leadership in IT (SIG LEAD)"
+    ]
+  },
+  {
+    "name": "Health Systems",
+    "database": "scopus",
+    "ISSN": "2047-6965",
+    "AIS SIG Categories": [
+      "IT in Health Care (SIG Health)"
+    ]
+  },
+  {
+    "name": "Information & Computer Security",
+    "database": "scopus",
+    "ISSN": "2056-4961",
+    "AIS SIG Categories": [
+      "Information Security and Privacy (SIG SEC)"
+    ]
+  },
+  {
+    "name": "Journal of Cybersecurity",
+    "database": "scopus",
+    "ISSN": "2057-2085",
+    "AIS SIG Categories": [
+      "Information Security and Privacy (SIG SEC)"
+    ]
+  },
+  {
+    "name": "Journal of Big Data",
+    "database": "scopus",
+    "ISSN": "2196-1115",
+    "AIS SIG Categories": [
+      "Big Data Application Process (SIG BD)"
+    ]
+  },
+  {
+    "name": "Health Policy and Technology",
+    "database": "scopus",
+    "ISSN": "2211-8837",
+    "AIS SIG Categories": [
+      "IT in Health Care (SIG Health)"
+    ]
+  },
+  {
+    "name": "Energy Research & Social Science",
+    "database": "scopus",
+    "ISSN": "2214-6296",
+    "AIS SIG Categories": [
+      "Green IS (SIG Green)"
+    ]
+  },
+  {
+    "name": "JMIR Serious Games",
+    "database": "scopus",
+    "ISSN": "2291-9279",
+    "AIS SIG Categories": [
+      "GAME (SIG GAME)"
+    ]
+  },
+  {
+    "name": "Journal of the Association for Information Science and Technology (JASIST)",
+    "database": "scopus",
+    "ISSN": "2330-1635",
+    "AIS SIG Categories": [
+      "E-Business (SIG EBIZ)"
+    ]
+  },
+  {
+    "name": "ACM Transactions on Privacy and Security",
+    "database": "scopus",
+    "ISSN": "2471-2566",
+    "AIS SIG Categories": [
+      "Information Security and Privacy (SIG SEC)"
+    ]
+  },
+  {
+    "name": "IEEE Transactions on Games",
+    "database": "scopus",
+    "ISSN": "2475-1502",
+    "AIS SIG Categories": [
+      "GAME (SIG GAME)"
+    ]
+  },
+  {
+    "name": "Journal of Service Management Research",
+    "database": "None",
+    "ISSN": "2511-8676",
+    "AIS SIG Categories": [
+      "Services (SIG SVC)"
+    ]
+  },
+  {
+    "name": "Energy Informatics",
+    "database": "scopus",
+    "ISSN": "2520-8942",
+    "AIS SIG Categories": [
+      "Green IS (SIG Green)"
+    ]
+  },
+  {
+    "name": "Cybersecurity",
+    "database": "scopus",
+    "ISSN": "2523-3246",
+    "AIS SIG Categories": [
+      "Information Security and Privacy (SIG SEC)"
+    ]
+  },
+  {
+    "name": "Data Science and Management",
+    "database": "scopus",
+    "ISSN": "2666-7649",
+    "AIS SIG Categories": [
+      "IS/IT Issues in Asia Pacific (SIG ISAP)"
+    ]
   }
 ]

@@ -21,6 +21,7 @@ function generateLinks() {
     
     // 1. Get the state of all filters based on the new IDs in index.html
     const filterAISSeniorScholarPremierJournals = document.getElementById('AISSeniorScholarPremierJournals')?.checked || false;
+    const filterAISSigCategories = document.getElementById('AISSigCategories')?.checked || false;
     const filter_Vhb_2024_WI_APlus = document.getElementById('vhb-2024-WI-A+')?.checked || false;
     const filter_Vhb_2024_WI_A = document.getElementById('vhb-2024-WI-A')?.checked || false;
     const filter_Vhb_2024_WI_B = document.getElementById('vhb-2024-WI-B')?.checked || false;
@@ -36,6 +37,7 @@ function generateLinks() {
     }
 
     const noFiltersSelected = !filterAISSeniorScholarPremierJournals && 
+                              !filterAISSigCategories &&
                               !filter_Vhb_2024_WI_APlus && 
                               !filter_Vhb_2024_WI_A && 
                               !filter_Vhb_2024_WI_B &&
@@ -59,6 +61,7 @@ function generateLinks() {
         // 2. Filter using "OR" logic (include if it matches ANY checked filter)
         let filteredPubs = publicationsData.filter(pub => {
             if (filterAISSeniorScholarPremierJournals && pub.isISSeniorScholarBasket) return true;
+            if (filterAISSigCategories && Array.isArray(pub['AIS SIG Categories']) && pub['AIS SIG Categories'].length > 0) return true;
             if (filter_Vhb_2024_WI_APlus && pub['VHB-2024-WI-rank'] === "A+") return true;
             if (filter_Vhb_2024_WI_A && pub['VHB-2024-WI-rank'] === "A") return true;
             if (filter_Vhb_2024_WI_B && pub['VHB-2024-WI-rank'] === "B") return true;
