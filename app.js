@@ -147,7 +147,7 @@ function generateLinks() {
             const publicationTitles = pubs
                 .map(p => p.search_term || p.name)
                 .filter(Boolean)
-                .map(term => term.toLowerCase())
+                .map(term => `"${term.toLowerCase()}"`)
                 .join(' OR ');
             query = `title:(${searchString}) OR abstract:(${searchString}) OR subject:(${searchString})`;
             if (hasPubs) {
