@@ -1,21 +1,21 @@
 [
   {
     "name": "ACM SIGMIS Database: The DATA BASE for Advances in Information Systems",
-    "database": "acm",
+    "database": "scopus",
     "ISSN": "0095-0033",
     "isISSeniorScholarBasket": false,
     "VHB-2024-WI-rank": "B"
   },
   {
     "name": "ACM Transactions on Management Information Systems",
-    "database": "acm",
+    "database": "scopus",
     "ISSN": "2158-656x",
     "isISSeniorScholarBasket": false,
     "VHB-2024-WI-rank": "B"
   },
   {
     "name": "Information Systems Frontiers",
-    "database": "acm",
+    "database": "scopus",
     "ISSN": "1387-3326",
     "isISSeniorScholarBasket": false,
     "VHB-2024-WI-rank": "B",
