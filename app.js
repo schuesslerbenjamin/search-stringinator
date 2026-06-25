@@ -26,6 +26,7 @@ function generateLinks() {
     const filter_Vhb_2024_WI_A = document.getElementById('vhb-2024-WI-A')?.checked || false;
     const filter_Vhb_2024_WI_B = document.getElementById('vhb-2024-WI-B')?.checked || false;
     const filter_Vhb_2024_WI_Conference_A = document.getElementById('vhb-2024-WI-conference-A')?.checked || false;
+    const filter_Vhb_2024_WI_Conference_B = document.getElementById('vhb-2024-WI-conference-B')?.checked || false;
     const filter_Vhb_2024_WI_Interface_APlus = document.getElementById('vhb-2024-WI-interface-A+')?.checked || false;
     const filter_Vhb_2024_WI_Interface_A = document.getElementById('vhb-2024-WI-interface-A')?.checked || false;
     
@@ -36,12 +37,13 @@ function generateLinks() {
         return;
     }
 
-    const noFiltersSelected = !filterAISSeniorScholarPremierJournals && 
+    const noFiltersSelected = !filterAISSeniorScholarPremierJournals &&
                               !filterAISSigCategories &&
-                              !filter_Vhb_2024_WI_APlus && 
-                              !filter_Vhb_2024_WI_A && 
+                              !filter_Vhb_2024_WI_APlus &&
+                              !filter_Vhb_2024_WI_A &&
                               !filter_Vhb_2024_WI_B &&
                               !filter_Vhb_2024_WI_Conference_A &&
+                              !filter_Vhb_2024_WI_Conference_B &&
                               !filter_Vhb_2024_WI_Interface_APlus &&
                               !filter_Vhb_2024_WI_Interface_A;
 
@@ -66,6 +68,7 @@ function generateLinks() {
             if (filter_Vhb_2024_WI_A && pub['VHB-2024-WI-rank'] === "A") return true;
             if (filter_Vhb_2024_WI_B && pub['VHB-2024-WI-rank'] === "B") return true;
             if (filter_Vhb_2024_WI_Conference_A && pub['VHB-2024-WI-conference-rank'] === "A") return true;
+            if (filter_Vhb_2024_WI_Conference_B && pub['VHB-2024-WI-conference-rank'] === "B") return true;
             if (filter_Vhb_2024_WI_Interface_APlus && pub['VHB-2024-WI-interface-rank'] === "A+") return true;
             if (filter_Vhb_2024_WI_Interface_A && pub['VHB-2024-WI-interface-rank'] === "A") return true;
             return false; // Drop it if it didn't match any selected filter
@@ -168,7 +171,7 @@ function generateLinks() {
             const journalListHtml = pubs.map(p => {
                 const metadata = p.ISSN
                     ? `ISSN: ${p.ISSN}`
-: (p.conference_name ? `Conference: ${p.conference_name}` : (p.search_term ? `Search term: ${p.search_term}` : ""));
+                    : (p.conference_name ? `Conference: ${p.conference_name}` : (p.search_term ? `Search term: ${p.search_term}` : ""));
                 return `<li style="margin-bottom: 0.25rem;">${p.name}${metadata ? ` (${metadata})` : ""}</li>`;
             }).join('');
             publicationsInfoHtml = `

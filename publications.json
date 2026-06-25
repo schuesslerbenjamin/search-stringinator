@@ -1019,5 +1019,41 @@
     "AIS SIG Categories": [
       "IS/IT Issues in Asia Pacific (SIG ISAP)"
     ]
+  },
+  {
+    "name": "CAiSE - Advanced Information Systems Engineering (CAiSE (in LNCS))",
+    "database": "scopus",
+    "conference_name": "International Conference on Advanced Information Systems Engineering CAiSE",
+    "VHB-2024-WI-conference-rank": "B"
+  },
+  {
+    "name": "ER - Conceptual Modeling (ER (in LNCS))",
+    "database": "scopus",
+    "conference_name": "conceptual modeling ER",
+    "VHB-2024-WI-conference-rank": "B"
+  },
+  {
+    "name": "Wirtschaftsinformatik Proceedings",
+    "database": "aisel",
+    "search_term": "wirtschaftsinformatik",
+    "VHB-2024-WI-conference-rank": "B"
+  },
+  {
+    "name": "Hawaii International Conference on System Sciences",
+    "database": "aisel",
+    "search_term": "Hawaii International Conference on System Sciences",
+    "VHB-2024-WI-conference-rank": "B"
+  },
+  {
+    "name": "International Conference on Business Process Management",
+    "database": "scopus",
+    "conference_name": "International Conference on Business Process Management",
+    "VHB-2024-WI-conference-rank": "B"
+  },
+  {
+    "name": "International Conference on Design Science Research in Information Systems AND Technology",
+    "database": "scopus",
+    "conference_name": "International Conference on Design Science Research in Information Systems AND Technology",
+    "VHB-2024-WI-conference-rank": "B"
   }
 ]
