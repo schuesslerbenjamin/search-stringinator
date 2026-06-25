@@ -104,8 +104,12 @@ function generateLinks() {
         if (db === "scopus") {
             dbName = "Scopus";
             if (hasPubs) {
-                const issnString = pubs.map(p => `ISSN(${p.ISSN})`).join(' OR ');
-                query = `((${issnString}) AND TITLE-ABS-KEY(${searchString}))`;
+                const scopusParts = pubs.map(p => {
+                    if (p.ISSN) return `ISSN(${p.ISSN})`;
+                    if (p.conference_name) return `CONF(${p.conference_name})`;
+                    return null;
+                }).filter(Boolean);
+                query = `((${scopusParts.join(' OR ')}) AND TITLE-ABS-KEY(${searchString}))`;
             } else {
                 query = `TITLE-ABS-KEY(${searchString})`;
             }
@@ -164,7 +168,7 @@ function generateLinks() {
             const journalListHtml = pubs.map(p => {
                 const metadata = p.ISSN
                     ? `ISSN: ${p.ISSN}`
-                    : (p.search_term ? `Search term: ${p.search_term}` : "");
+: (p.conference_name ? `Conference: ${p.conference_name}` : (p.search_term ? `Search term: ${p.search_term}` : ""));
                 return `<li style="margin-bottom: 0.25rem;">${p.name}${metadata ? ` (${metadata})` : ""}</li>`;
             }).join('');
             publicationsInfoHtml = `
