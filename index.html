@@ -85,6 +85,24 @@
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
+        /* Side-by-side columns to save vertical space */
+        .columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .columns > .form-group {
+            flex: 1 1 260px;
+            min-width: 0;
+            margin-bottom: 0;
+        }
+
+        .columns > .form-group:last-child {
+            flex: 2 1 380px;
+        }
+
         .filters {
             display: flex;
             flex-direction: column;
@@ -245,6 +263,29 @@
         .btn-blue { background-color: #0056b3; }
         .btn-blue:hover { background-color: #004494; }
 
+        .db-preference {
+            margin: 1rem 0 0;
+            padding-left: 1.5rem;
+        }
+
+        .db-preference li {
+            padding: 0.25rem 0;
+        }
+
+        .db-preference button {
+            border: 1px solid var(--border);
+            background: var(--bg);
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 0.25rem;
+            padding: 0 0.4rem;
+        }
+
+        .db-preference button:disabled {
+            opacity: 0.4;
+            cursor: default;
+        }
+
     </style>
 </head>
 <body>
@@ -257,6 +298,15 @@
     <div class="form-group">
         <label for="searchString"><strong>Base Boolean Search String:</strong></label>
         <textarea id="searchString" placeholder='e.g., ("artificial intelligence" OR "AI") AND "adoption"'></textarea>
+    </div>
+
+    <div class="columns">
+    <div class="form-group">
+        <strong>Database Preference:</strong>
+        <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: var(--text-muted);">
+            A publication is searched in the first database of this list that offers it.
+        </p>
+        <ol id="dbPreference" class="db-preference"></ol>
     </div>
 
     <div class="form-group">
@@ -304,6 +354,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <button class="primary-btn" onclick="generateLinks()">Generate Search Links</button>

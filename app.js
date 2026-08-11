@@ -1,10 +1,49 @@
 let publicationsData = [];
 
+// Databases in order of preference; a publication is searched in the first one that offers it.
+// The user can reorder this list in the UI.
+let dbPreference = ["scopus", "ebscohost", "proquest", "acm", "aisel"];
+
+const DB_NAMES = {
+    scopus: "Scopus",
+    ebscohost: "EBSCOhost",
+    proquest: "ProQuest",
+    acm: "ACM Digital Library",
+    aisel: "AIS eLibrary"
+};
+
 // Load the flattened JSON data
 fetch('publications.json')
     .then(response => response.json())
     .then(data => { publicationsData = data; })
     .catch(error => console.error('Error loading publication data:', error));
+
+function renderDbPreference() {
+    const list = document.getElementById('dbPreference');
+    if (!list) return;
+    list.innerHTML = dbPreference.map((db, i) => `
+        <li>
+            ${DB_NAMES[db] || db}
+            <button onclick="moveDb(${i}, -1)" ${i === 0 ? 'disabled' : ''} aria-label="Move up">▲</button>
+            <button onclick="moveDb(${i}, 1)" ${i === dbPreference.length - 1 ? 'disabled' : ''} aria-label="Move down">▼</button>
+        </li>
+    `).join('');
+}
+
+function moveDb(index, direction) {
+    const target = index + direction;
+    if (target < 0 || target >= dbPreference.length) return;
+    [dbPreference[index], dbPreference[target]] = [dbPreference[target], dbPreference[index]];
+    renderDbPreference();
+}
+
+// Pick the most preferred database a publication is available in (null if none)
+function preferredDb(pub) {
+    const dbs = Array.isArray(pub.database) ? pub.database : [pub.database];
+    return dbPreference.find(db => dbs.includes(db)) || null;
+}
+
+renderDbPreference();
 
 function copyToClipboard(text, btn) {
     navigator.clipboard.writeText(text).then(() => {
@@ -52,14 +91,8 @@ function generateLinks() {
     let dbsToRender = [];
 
     if (noFiltersSelected) {
-        // If no filters are selected, prepare an array of the 4 databases with empty publication arrays
-        dbsToRender = [
-            { db: "scopus", pubs: [] },
-            { db: "ebscohost", pubs: [] },
-            { db: "proquest", pubs: [] },
-            { db: "acm", pubs: [] },
-            { db: "aisel", pubs: [] }
-        ];
+        // If no filters are selected, prepare all databases with empty publication arrays
+        dbsToRender = dbPreference.map(db => ({ db, pubs: [] }));
         resultsContainer.innerHTML = `<h3>Generated Search Strings (All Publications - No Filters Applied)</h3>`;
     } else {
         // 2. Filter using "OR" logic (include if it matches ANY checked filter)
@@ -82,18 +115,20 @@ function generateLinks() {
             return;
         }
 
-        // Group the filtered publications by database
+        // Group the filtered publications by their most preferred database
         const groupedPubs = filteredPubs.reduce((acc, pub) => {
-            const db = pub.database;
-            if (db && ["scopus", "ebscohost", "proquest", "acm", "aisel"].includes(db)) {
+            const db = preferredDb(pub);
+            if (db) {
                 if (!acc[db]) acc[db] = [];
                 acc[db].push(pub);
             }
             return acc;
         }, {});
 
-        // Convert the object back into an array for our rendering pipeline
-        dbsToRender = Object.entries(groupedPubs).map(([db, pubs]) => ({ db, pubs }));
+        // Convert the object back into an array (in preference order) for our rendering pipeline
+        dbsToRender = dbPreference
+            .filter(db => groupedPubs[db])
+            .map(db => ({ db, pubs: groupedPubs[db] }));
         resultsContainer.innerHTML = `<h3>Generated Search Strings (${filteredPubs.length} Publications Included)</h3>`;
     }
 
