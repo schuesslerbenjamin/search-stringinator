@@ -29,7 +29,8 @@ function generateLinks() {
     const filter_Vhb_2024_WI_Conference_B = document.getElementById('vhb-2024-WI-conference-B')?.checked || false;
     const filter_Vhb_2024_WI_Interface_APlus = document.getElementById('vhb-2024-WI-interface-A+')?.checked || false;
     const filter_Vhb_2024_WI_Interface_A = document.getElementById('vhb-2024-WI-interface-A')?.checked || false;
-    
+    const filter_Vhb_2024_WI_Interface_B = document.getElementById('vhb-2024-WI-interface-B')?.checked || false;
+
     const resultsContainer = document.getElementById('results');
 
     if (!searchString) {
@@ -45,7 +46,8 @@ function generateLinks() {
                               !filter_Vhb_2024_WI_Conference_A &&
                               !filter_Vhb_2024_WI_Conference_B &&
                               !filter_Vhb_2024_WI_Interface_APlus &&
-                              !filter_Vhb_2024_WI_Interface_A;
+                              !filter_Vhb_2024_WI_Interface_A &&
+                              !filter_Vhb_2024_WI_Interface_B;
 
     let dbsToRender = [];
 
@@ -71,6 +73,7 @@ function generateLinks() {
             if (filter_Vhb_2024_WI_Conference_B && pub['VHB-2024-WI-conference-rank'] === "B") return true;
             if (filter_Vhb_2024_WI_Interface_APlus && pub['VHB-2024-WI-interface-rank'] === "A+") return true;
             if (filter_Vhb_2024_WI_Interface_A && pub['VHB-2024-WI-interface-rank'] === "A") return true;
+            if (filter_Vhb_2024_WI_Interface_B && pub['VHB-2024-WI-interface-rank'] === "B") return true;
             return false; // Drop it if it didn't match any selected filter
         });
 

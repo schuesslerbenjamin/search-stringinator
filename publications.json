@@ -1055,5 +1055,263 @@
     "database": "scopus",
     "conference_name": "International Conference on Design Science Research in Information Systems AND Technology",
     "VHB-2024-WI-conference-rank": "B"
+  },
+  {
+    "name": "Annals of Operations Research",
+    "ISSN": "0254-5330",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Journal of Interactive Marketing",
+    "ISSN": "1520-6653",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Journal of the ACM ",
+    "ISSN": "1557-735X",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Decision Sciences",
+    "ISSN": "1540-5915",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Computers & Operations Research",
+    "ISSN": "0305-0548",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Technological Forecasting and Social Change",
+    "ISSN": "0040-1625",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Omega",
+    "ISSN": "0305-0483",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "IEEE Transactions on Engineering Management",
+    "ISSN": "1558-0040",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Computers in Human Behavior",
+    "ISSN": "0747-5632",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "INFORMS Journal on Applied Analytics",
+    "ISSN": "2644-0865",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "ACM Transactions on Computer-Human Interaction",
+    "ISSN": "1073-0516",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Artificial Intelligence",
+    "ISSN": "0004-3702",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Computer ",
+    "ISSN": "0018-9162",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Human-Computer Interaction",
+    "ISSN": " 0737-0024 ",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Government Information Quarterly",
+    "ISSN": "0740-624X",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Communications of the ACM",
+    "ISSN": "1557-7317",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Data & Knowledge Engineering",
+    "ISSN": "0169-023X",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Journal of Service Management",
+    "ISSN": "1757-5826",
+    "database": "proquest",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Computer Supported Cooperative Work",
+    "ISSN": "1573-7551",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Information and Software Technology",
+    "ISSN": "0950-5849",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "IEEE Transactions on Software Engineering",
+    "ISSN": "1939-3520",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Journal of Cleaner Production",
+    "ISSN": "1879-1786",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Operations Research Letters",
+    "ISSN": "0167-6377",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "MIT Sloan Management Review",
+    "ISSN": "1532-9194",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "ACM Transactions on Software Engineering and Methodology",
+    "ISSN": "1557-7392",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "IEEE Software",
+    "ISSN": "1937-4194",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Journal of Medical Internet Research",
+    "ISSN": "1438-8871",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "IEEE Transactions on Knowledge and Data Engineering",
+    "ISSN": "1558-2191",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Technovation",
+    "ISSN": "0166-4972",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "ACM Transactions on Human-Robot Interaction",
+    "ISSN": "2573-9522",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Service Science",
+    "ISSN": "2164-3970",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "INFORMS Journal on Data Science",
+    "ISSN": "2694-4022",
+    "database": "ebscohost",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Journal of Systems and Software",
+    "ISSN": "0164-1212",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "International Journal of Innovation Management",
+    "ISSN": "1363-9196",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "IEEE Transactions on Human-Machine Systems",
+    "ISSN": "2168-2305",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "International Journal of Human Computer Studies",
+    "ISSN": "1095-9300",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "ACM Transactions on Interactive Intelligent Systems",
+    "ISSN": "2160-6463",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Computers in Industry",
+    "ISSN": "0166-3615",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Computers & Education",
+    "ISSN": "0360-1315",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "Expert Systems with Applications",
+    "ISSN": "0957-4174",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "IEEE Access",
+    "ISSN": "2169-3536",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "International Journal of Accounting Information Systems",
+    "ISSN": "1467-0895",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
+  },
+  {
+    "name": "IEEE Transactions on Systems, Man, and Cybernetics: Systems",
+    "ISSN": "2168-2232",
+    "database": "scopus",
+    "VHB-2024-WI-interface-rank": "B"
   }
 ]
