@@ -1,10 +1,15 @@
 [
   {
     "name": "ACM SIGMIS Database: The DATA BASE for Advances in Information Systems",
-    "database": ["scopus"],
+    "database": [
+      "scopus"
+    ],
     "ISSN": "0095-0033",
     "isISSeniorScholarBasket": false,
-    "VHB-2024-WI-rank": "B"
+    "VHB-2024-WI-rank": "B",
+    "AIS SIG Categories": [
+      "Leadership in IT (SIG LEAD)"
+    ]
   },
   {
     "name": "ACM Transactions on Management Information Systems",
@@ -33,17 +38,16 @@
   },
   {
     "name": "Behaviour & Information Technology",
-    "database": ["ebscohost"],
+    "database": [
+      "scopus",
+      "ebscohost"
+    ],
     "ISSN": "0144-929X",
     "isISSeniorScholarBasket": false,
-    "VHB-2024-WI-rank": "B"
-  },
-  {
-    "name": "Communications of the Association for Information Systems",
-    "database": ["ebscohost"],
-    "ISSN": "1529-3181",
-    "isISSeniorScholarBasket": false,
-    "VHB-2024-WI-rank": "B"
+    "VHB-2024-WI-rank": "B",
+    "AIS SIG Categories": [
+      "Leadership in IT (SIG LEAD)"
+    ]
   },
   {
     "name": "Decision Support Systems",
@@ -59,10 +63,17 @@
   },
   {
     "name": "European Journal of Information Systems",
-    "database": ["ebscohost"],
+    "database": [
+      "scopus",
+      "ebscohost"
+    ],
     "ISSN": "0960-085X",
     "isISSeniorScholarBasket": true,
-    "VHB-2024-WI-rank": "A"
+    "VHB-2024-WI-rank": "A",
+    "AIS SIG Categories": [
+      "IT Project Management (SIG ITProjMgmt)",
+      "Systems Analysis and Design (SIG SAND)"
+    ]
   },
   {
     "name": "Group Decision and Negotiation",
@@ -84,12 +95,16 @@
   },
   {
     "name": "Information Systems Research",
-    "database": ["ebscohost"],
+    "database": [
+      "scopus",
+      "ebscohost"
+    ],
     "ISSN": "1047-7047",
     "isISSeniorScholarBasket": true,
     "VHB-2024-WI-rank": "A+",
     "AIS SIG Categories": [
-      "IT Project Management (SIG ITProjMgmt)"
+      "IT Project Management (SIG ITProjMgmt)",
+      "Systems Analysis and Design (SIG SAND)"
     ]
   },
   {
@@ -140,25 +155,18 @@
     "VHB-2024-WI-rank": "B"
   },
   {
-    "name": "Journal of Management Information Systems",
-    "database": ["ebscohost"],
-    "ISSN": "0742-1222",
-    "isISSeniorScholarBasket": true,
-    "VHB-2024-WI-rank": "A"
-  },
-  {
     "name": "Journal of the Association for Information Systems",
-    "database": ["ebscohost"],
+    "database": [
+      "scopus",
+      "ebscohost"
+    ],
     "ISSN": "1536-9323",
     "isISSeniorScholarBasket": true,
-    "VHB-2024-WI-rank": "A"
-  },
-  {
-    "name": "MIS Quarterly",
-    "database": ["ebscohost"],
-    "ISSN": "02767783",
-    "isISSeniorScholarBasket": true,
-    "VHB-2024-WI-rank": "A+"
+    "VHB-2024-WI-rank": "A",
+    "AIS SIG Categories": [
+      "IT Project Management (SIG ITProjMgmt)",
+      "Systems Analysis and Design (SIG SAND)"
+    ]
   },
   {
     "name": "MIS Quarterly Executive",
@@ -179,17 +187,29 @@
   },
   {
     "name": "The Journal of Strategic Information Systems",
-    "database": ["ebscohost"],
+    "database": [
+      "scopus",
+      "ebscohost"
+    ],
     "ISSN": "0963-8687",
     "isISSeniorScholarBasket": true,
-    "VHB-2024-WI-rank": "A"
+    "VHB-2024-WI-rank": "A",
+    "AIS SIG Categories": [
+      "IT Project Management (SIG ITProjMgmt)"
+    ]
   },
   {
     "name": "AIS Transactions on Human-Computer Interaction",
-    "database": ["proquest"],
+    "database": [
+      "proquest",
+      "aisel"
+    ],
     "ISSN": "1944-3900",
     "isISSeniorScholarBasket": false,
-    "VHB-2024-WI-rank": "B"
+    "VHB-2024-WI-rank": "B",
+    "AIS SIG Categories": [
+      "GAME (SIG GAME)"
+    ]
   },
   {
     "name": "Business & Information Systems Engineering",
@@ -378,11 +398,13 @@
     "AIS SIG Categories": [
       "Organizational Systems Research (SIG OSRA)"
     ]
-  },
-  {
+  },{
     "name": "IEEE Transactions on Engineering Management",
-    "database": ["scopus"],
+    "database": [
+      "scopus"
+    ],
     "ISSN": "0018-9391",
+    "VHB-2024-WI-interface-rank": "B",
     "AIS SIG Categories": [
       "Digital Sourcing, Platforms and Ecosystems (SIGDSPE); formerly Advances in Sourcing (SIG Sourcing)",
       "IS/IT Issues in Asia Pacific (SIG ISAP)"
@@ -390,40 +412,33 @@
   },
   {
     "name": "Technological Forecasting and Social Change",
-    "database": ["scopus"],
+    "database": [
+      "scopus"
+    ],
     "ISSN": "0040-1625",
+    "VHB-2024-WI-interface-rank": "B",
     "AIS SIG Categories": [
       "Green IS (SIG Green)"
     ]
   },
   {
-    "name": "Data Base For Advances In Information Systems",
-    "database": ["scopus"],
-    "ISSN": "0095-0033",
-    "AIS SIG Categories": [
-      "Leadership in IT (SIG LEAD)"
-    ]
-  },
-  {
     "name": "IEEE Transactions on Software Engineering",
-    "database": ["scopus"],
+    "database": [
+      "scopus"
+    ],
     "ISSN": "0098-5589",
+    "VHB-2024-WI-interface-rank": "B",
     "AIS SIG Categories": [
       "Digital Sourcing, Platforms and Ecosystems (SIGDSPE); formerly Advances in Sourcing (SIG Sourcing)"
     ]
   },
   {
-    "name": "Behavior & Information Technology",
-    "database": ["scopus"],
-    "ISSN": "0144-929X",
-    "AIS SIG Categories": [
-      "Leadership in IT (SIG LEAD)"
-    ]
-  },
-  {
     "name": "Journal of Systems and Software",
-    "database": ["scopus"],
+    "database": [
+      "scopus"
+    ],
     "ISSN": "0164-1212",
+    "VHB-2024-WI-interface-rank": "B",
     "AIS SIG Categories": [
       "Digital Sourcing, Platforms and Ecosystems (SIGDSPE); formerly Advances in Sourcing (SIG Sourcing)"
     ]
@@ -461,9 +476,14 @@
     ]
   },
   {
-    "name": "MIS Quarterly (MISQ)",
-    "database": ["scopus"],
+    "name": "MIS Quarterly",
+    "database": [
+      "scopus",
+      "ebscohost"
+    ],
     "ISSN": "0276-7783",
+    "isISSeniorScholarBasket": true,
+    "VHB-2024-WI-rank": "A+",
     "AIS SIG Categories": [
       "IT Project Management (SIG ITProjMgmt)",
       "Systems Analysis and Design (SIG SAND)"
@@ -494,9 +514,14 @@
     ]
   },
   {
-    "name": "Journal of Management Information Systems (JMIS)",
-    "database": ["scopus"],
+    "name": "Journal of Management Information Systems",
+    "database": [
+      "scopus",
+      "ebscohost"
+    ],
     "ISSN": "0742-1222",
+    "isISSeniorScholarBasket": true,
+    "VHB-2024-WI-rank": "A",
     "AIS SIG Categories": [
       "IT Project Management (SIG ITProjMgmt)",
       "Systems Analysis and Design (SIG SAND)"
@@ -519,44 +544,14 @@
     ]
   },
   {
-    "name": "Information and Software Technology",
-    "database": ["scopus"],
-    "ISSN": "0950-5849",
-    "AIS SIG Categories": [
-      "Digital Sourcing, Platforms and Ecosystems (SIGDSPE); formerly Advances in Sourcing (SIG Sourcing)"
-    ]
-  },
-  {
     "name": "Expert Systems with Applications",
-    "database": ["scopus"],
+    "database": [
+      "scopus"
+    ],
     "ISSN": "0957-4174",
+    "VHB-2024-WI-interface-rank": "B",
     "AIS SIG Categories": [
       "Artificial Intelligence (SIG AI); formerly Artificial Intelligence & Autonomous Application"
-    ]
-  },
-  {
-    "name": "Journal of Cleaner Production",
-    "database": ["scopus"],
-    "ISSN": "0959-6526",
-    "AIS SIG Categories": [
-      "Green IS (SIG Green)"
-    ]
-  },
-  {
-    "name": "European Journal of Information Systems (EJIS)",
-    "database": ["scopus"],
-    "ISSN": "0960-085X",
-    "AIS SIG Categories": [
-      "IT Project Management (SIG ITProjMgmt)",
-      "Systems Analysis and Design (SIG SAND)"
-    ]
-  },
-  {
-    "name": "Journal of Strategic Information Systems",
-    "database": ["scopus"],
-    "ISSN": "0963-8687",
-    "AIS SIG Categories": [
-      "IT Project Management (SIG ITProjMgmt)"
     ]
   },
   {
@@ -581,14 +576,6 @@
     "ISSN": "1046-8781",
     "AIS SIG Categories": [
       "GAME (SIG GAME)"
-    ]
-  },
-  {
-    "name": "Information Systems Research (ISR)",
-    "database": ["scopus"],
-    "ISSN": "1047-7047",
-    "AIS SIG Categories": [
-      "Systems Analysis and Design (SIG SAND)"
     ]
   },
   {
@@ -689,16 +676,22 @@
   },
   {
     "name": "Journal of Medical Internet Research",
-    "database": ["scopus"],
+    "database": [
+      "scopus"
+    ],
     "ISSN": "1438-8871",
+    "VHB-2024-WI-interface-rank": "B",
     "AIS SIG Categories": [
       "IT in Health Care (SIG Health)"
     ]
   },
   {
     "name": "International Journal of Accounting Information Systems",
-    "database": ["scopus"],
+    "database": [
+      "scopus"
+    ],
     "ISSN": "1467-0895",
+    "VHB-2024-WI-interface-rank": "B",
     "AIS SIG Categories": [
       "Accounting IS (SIG ASYS)"
     ]
@@ -712,22 +705,18 @@
     ]
   },
   {
-    "name": "Communications of the Association for Information Systems (CAIS)",
-    "database": ["scopus"],
+    "name": "Communications of the Association for Information Systems",
+    "database": [
+      "scopus",
+      "ebscohost"
+    ],
     "ISSN": "1529-3181",
+    "isISSeniorScholarBasket": false,
+    "VHB-2024-WI-rank": "B",
     "AIS SIG Categories": [
       "Education (SIG ED)",
       "Green IS (SIG Green)",
       "Social Inclusion (SIG SI)"
-    ]
-  },
-  {
-    "name": "Journal of the Association for Information Systems (JAIS)",
-    "database": ["scopus"],
-    "ISSN": "1536-9323",
-    "AIS SIG Categories": [
-      "IT Project Management (SIG ITProjMgmt)",
-      "Systems Analysis and Design (SIG SAND)"
     ]
   },
   {
@@ -854,8 +843,12 @@
   },
   {
     "name": "Journal of Service Management",
-    "database": ["scopus"],
+    "database": [
+      "scopus",
+      "proquest"
+    ],
     "ISSN": "1757-5818",
+    "VHB-2024-WI-interface-rank": "B",
     "AIS SIG Categories": [
       "Services (SIG SVC)"
     ]
@@ -890,14 +883,6 @@
     "ISSN": "1943-7544",
     "AIS SIG Categories": [
       "IS/IT Issues in Asia Pacific (SIG ISAP)"
-    ]
-  },
-  {
-    "name": "AIS Transactions on Human Computer Interaction",
-    "database": ["aisel"],
-    "ISSN": "1944-3900",
-    "AIS SIG Categories": [
-      "GAME (SIG GAME)"
     ]
   },
   {
@@ -1087,20 +1072,8 @@
     "VHB-2024-WI-interface-rank": "B"
   },
   {
-    "name": "Technological Forecasting and Social Change",
-    "ISSN": "0040-1625",
-    "database": ["scopus"],
-    "VHB-2024-WI-interface-rank": "B"
-  },
-  {
     "name": "Omega",
     "ISSN": "0305-0483",
-    "database": ["scopus"],
-    "VHB-2024-WI-interface-rank": "B"
-  },
-  {
-    "name": "IEEE Transactions on Engineering Management",
-    "ISSN": "1558-0040",
     "database": ["scopus"],
     "VHB-2024-WI-interface-rank": "B"
   },
@@ -1159,12 +1132,6 @@
     "VHB-2024-WI-interface-rank": "B"
   },
   {
-    "name": "Journal of Service Management",
-    "ISSN": "1757-5826",
-    "database": ["proquest"],
-    "VHB-2024-WI-interface-rank": "B"
-  },
-  {
     "name": "Computer Supported Cooperative Work",
     "ISSN": "1573-7551",
     "database": ["scopus"],
@@ -1172,21 +1139,25 @@
   },
   {
     "name": "Information and Software Technology",
+    "database": [
+      "scopus"
+    ],
     "ISSN": "0950-5849",
-    "database": ["scopus"],
-    "VHB-2024-WI-interface-rank": "B"
-  },
-  {
-    "name": "IEEE Transactions on Software Engineering",
-    "ISSN": "1939-3520",
-    "database": ["scopus"],
-    "VHB-2024-WI-interface-rank": "B"
+    "VHB-2024-WI-interface-rank": "B",
+    "AIS SIG Categories": [
+      "Digital Sourcing, Platforms and Ecosystems (SIGDSPE); formerly Advances in Sourcing (SIG Sourcing)"
+    ]
   },
   {
     "name": "Journal of Cleaner Production",
-    "ISSN": "1879-1786",
-    "database": ["scopus"],
-    "VHB-2024-WI-interface-rank": "B"
+    "database": [
+      "scopus"
+    ],
+    "ISSN": "0959-6526",
+    "VHB-2024-WI-interface-rank": "B",
+    "AIS SIG Categories": [
+      "Green IS (SIG Green)"
+    ]
   },
   {
     "name": "Operations Research Letters",
@@ -1209,12 +1180,6 @@
   {
     "name": "IEEE Software",
     "ISSN": "1937-4194",
-    "database": ["scopus"],
-    "VHB-2024-WI-interface-rank": "B"
-  },
-  {
-    "name": "Journal of Medical Internet Research",
-    "ISSN": "1438-8871",
     "database": ["scopus"],
     "VHB-2024-WI-interface-rank": "B"
   },
@@ -1246,12 +1211,6 @@
     "name": "INFORMS Journal on Data Science",
     "ISSN": "2694-4022",
     "database": ["ebscohost"],
-    "VHB-2024-WI-interface-rank": "B"
-  },
-  {
-    "name": "Journal of Systems and Software",
-    "ISSN": "0164-1212",
-    "database": ["scopus"],
     "VHB-2024-WI-interface-rank": "B"
   },
   {
@@ -1291,20 +1250,8 @@
     "VHB-2024-WI-interface-rank": "B"
   },
   {
-    "name": "Expert Systems with Applications",
-    "ISSN": "0957-4174",
-    "database": ["scopus"],
-    "VHB-2024-WI-interface-rank": "B"
-  },
-  {
     "name": "IEEE Access",
     "ISSN": "2169-3536",
-    "database": ["scopus"],
-    "VHB-2024-WI-interface-rank": "B"
-  },
-  {
-    "name": "International Journal of Accounting Information Systems",
-    "ISSN": "1467-0895",
     "database": ["scopus"],
     "VHB-2024-WI-interface-rank": "B"
   },
