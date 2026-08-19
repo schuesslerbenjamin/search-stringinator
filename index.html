@@ -286,6 +286,79 @@
             cursor: default;
         }
 
+        /* "More details" link + SIG category dialog */
+        .link-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            margin-left: 0.5rem;
+            color: var(--primary);
+            font: inherit;
+            font-size: 0.85rem;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        #sigDialog {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            max-width: 520px;
+            width: 90vw;
+            color: var(--text-main);
+        }
+
+        #sigDialog::backdrop {
+            background: rgba(15, 23, 42, 0.4);
+        }
+
+        #sigList {
+            max-height: 50vh;
+            overflow-y: auto;
+            margin: 1rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        #sigList label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        #sigList input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .dialog-actions {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: flex-end;
+        }
+
+        .dialog-actions button {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .dialog-actions button.confirm {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+
     </style>
 </head>
 <body>
@@ -315,7 +388,8 @@
             <div class="filter-group">
                 <div class="filter-title">AIS Senior Scholars</div>
                 <label><input type="checkbox" id="AISSeniorScholarPremierJournals"> AIS Senior Scholars' List of Premier Journals</label>
-                <label><input type="checkbox" id="AISSigCategories"> Publications with AIS SIG Categories</label>
+                <label><input type="checkbox" id="AISSigCategories"> Publications with AIS SIG Categories<span id="sigSummary" style="color: var(--text-muted); font-size: 0.85rem;"></span></label>
+                <button type="button" class="link-btn" onclick="openSigDialog()">More details…</button>
             </div>
 
             <div class="filter-group">
@@ -362,6 +436,19 @@
     <div id="results">
         <em>Generated links will appear here...</em>
     </div>
+
+    <dialog id="sigDialog">
+        <strong>Select AIS SIG Categories</strong>
+        <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: var(--text-muted);">
+            Only publications belonging to at least one of the selected categories are included.
+        </p>
+        <div id="sigList"></div>
+        <div class="dialog-actions">
+            <button type="button" onclick="toggleAllSigs()">Select / deselect all</button>
+            <button type="button" onclick="document.getElementById('sigDialog').close()">Cancel</button>
+            <button type="button" class="confirm" onclick="applySigDialog()">Apply</button>
+        </div>
+    </dialog>
 
     <script src="app.js"></script>
 </body>

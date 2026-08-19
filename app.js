@@ -45,6 +45,53 @@ function preferredDb(pub) {
 
 renderDbPreference();
 
+// AIS SIG categories the user picked in the dialog; null means "all of them".
+let selectedSigCategories = null;
+
+function allSigCategories() {
+    const set = new Set();
+    publicationsData.forEach(pub => {
+        (pub['AIS SIG Categories'] || []).forEach(cat => set.add(cat));
+    });
+    return [...set].sort();
+}
+
+function openSigDialog() {
+    const cats = allSigCategories();
+    const list = document.getElementById('sigList');
+    list.innerHTML = cats.map(cat => {
+        const checked = !selectedSigCategories || selectedSigCategories.includes(cat);
+        return `<label><input type="checkbox" value="${cat.replace(/"/g, '&quot;')}" ${checked ? 'checked' : ''}> ${cat}</label>`;
+    }).join('');
+    document.getElementById('sigDialog').showModal();
+}
+
+function toggleAllSigs() {
+    const boxes = [...document.querySelectorAll('#sigList input')];
+    const target = !boxes.every(b => b.checked);
+    boxes.forEach(b => { b.checked = target; });
+}
+
+function applySigDialog() {
+    const boxes = [...document.querySelectorAll('#sigList input')];
+    const checked = boxes.filter(b => b.checked).map(b => b.value);
+    selectedSigCategories = checked.length === boxes.length ? null : checked;
+
+    // Picking categories implies the user wants this filter on.
+    document.getElementById('AISSigCategories').checked = checked.length > 0;
+
+    document.getElementById('sigSummary').textContent =
+        selectedSigCategories ? ` (${checked.length} of ${boxes.length} categories)` : '';
+    document.getElementById('sigDialog').close();
+}
+
+function matchesSigFilter(pub) {
+    const cats = pub['AIS SIG Categories'];
+    if (!Array.isArray(cats) || cats.length === 0) return false;
+    if (!selectedSigCategories) return true;
+    return cats.some(cat => selectedSigCategories.includes(cat));
+}
+
 function copyToClipboard(text, btn) {
     navigator.clipboard.writeText(text).then(() => {
         const originalText = btn.innerText;
@@ -98,7 +145,7 @@ function generateLinks() {
         // 2. Filter using "OR" logic (include if it matches ANY checked filter)
         let filteredPubs = publicationsData.filter(pub => {
             if (filterAISSeniorScholarPremierJournals && pub.isISSeniorScholarBasket) return true;
-            if (filterAISSigCategories && Array.isArray(pub['AIS SIG Categories']) && pub['AIS SIG Categories'].length > 0) return true;
+            if (filterAISSigCategories && matchesSigFilter(pub)) return true;
             if (filter_Vhb_2024_WI_APlus && pub['VHB-2024-WI-rank'] === "A+") return true;
             if (filter_Vhb_2024_WI_A && pub['VHB-2024-WI-rank'] === "A") return true;
             if (filter_Vhb_2024_WI_B && pub['VHB-2024-WI-rank'] === "B") return true;
